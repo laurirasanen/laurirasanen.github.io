@@ -5,11 +5,16 @@
         
         <title>Portfolio - Lauri R&auml;s&auml;nen</title>
         <style>
+            html, body 
+            {
+                margin: 0;
+                padding: 0;
+            }
             @font-face {
                 font-family: 'titillium_webregular';
-                src: url('titilliumweb-regular-webfont.woff2') format('woff2'), 
-                    url('titilliumweb-regular-webfont.woff') format('woff'), 
-                    url('titilliumWeb-regular.ttf') format('truetype');
+                src: url('laurirasanen.github.io/titilliumweb-regular-webfont.woff2') format('woff2'), 
+                    url('laurirasanen.github.io/titilliumweb-regular-webfont.woff') format('woff'), 
+                    url('laurirasanen.github.io/titilliumWeb-regular.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
@@ -20,6 +25,12 @@
                 text-indent: 250px;
                 color: black;
             }
+            h2 {
+                font-size: 250%;
+                margin-bottom: 0px;
+                text-indent: 250px;
+                color: white;
+            }
             p 
             {
                 font-size: 150%;
@@ -27,46 +38,50 @@
                 text-indent: 250px;
                 color: black;
             }
-            h2 {
-                font-size: 300%;
-                margin-bottom: 0px;
-                text-indent: 250px;
-                color: white;
-            }
 
-            p1 {
-                font-size: 150%;
-                margin-bottom: 0px;
-                text-indent: 250px;
-                color: white;
+            .topnav 
+            {
+                background-color: #333;
+                overflow: hidden;
             }
-
             .topnav a 
             {
                 float: left;
                 color: #f2f2f2;
                 text-align: center;
-                padding: 14px 16px;
+                padding: 10px 25px;
                 text-decoration: none;
-                font-size: 100%;
+                font-size: 150%;
             }
-            .topnav a:hover 
-            {
-                background-color: #ddd;
-                color: black;
+            .portfolio-header {
+                background-color: white;
+                overflow: hidden;
             }
-            .topnav a.active 
-            {
-                background-color: #4CAF50;
-                color: white;
+            .portfolio-released {
+                background-color: #3ac969;
+                overflow: hidden;
             }
+            .portfolio-in-development {
+                background-color: #0099ec;
+                overflow: hidden;
+            }
+
+            .portfolio-abandoned {
+                background-color: #ec8d00;
+                overflow: hidden;
+            }
+           
         </style>
     </head>
 <body>
 
     <div class="topnav">
-        <a class="active" href="/">Portfolio</a>
-        <a href="/contact/">Contact</a>
+        <div class="Links" style="margin-left: 225px">
+           
+            <a href="/">Portfolio</a>
+            <a href="/info/">Info</a>
+        </div>
+        
     </div>
 
 
@@ -80,22 +95,24 @@
     </div>
 
     <div class="portfolio-released">
-        <div class="title"><h1>Released</h1></div>
+            
+        <div class="title"><h2>Released</h2></div>
         <div class="subtitle" style="margin-bottom: 100px">
             <p>Projects that are available to the public but might still be in development.</p>
         </div>
+        
     </div>
 
     <div class="portfolio-in-development">
-        <div class="title"><h1>In Progress</h1></div>
+        <div class="title"><h2>In Progress</h2></div>
         <div class="subtitle" style="margin-bottom: 100px">
-            <p>Projects in development.</p>
+            <p>Projects currently in development.</p>
         </div>
     </div>
 
     <div class="portfolio-abandoned">
-        <div class="title"><h1>Abandoned</h1></div>
-        <div class="subtitle" style="margin-bottom: 100px">
+        <div class="title"><h2>Abandoned</h2></div>
+        <div class="subtitle" style="margin-bottom: 100px; color: white">
             <p>Projects that have been abandoned. Consists mostly of projects for learning and for university courses.</p>
         </div>
     </div>
