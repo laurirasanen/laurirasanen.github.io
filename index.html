@@ -84,6 +84,10 @@
                 color: white;
                 padding-bottom: 20px;
             }
+            .image:hover 
+            {
+                opacity: 0.3;
+            }
             .image-title {
                 position: absolute;
                 top: 8px;
@@ -127,9 +131,11 @@
             <p>Projects that are available to the public but might still be in development.</p>
         </div>
         <div class="image-container">
-            <a href="/projects/statsbot.html">
-                <img src="/images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
-            </a>
+            <div class="image">
+                <a href="/projects/statsbot.html">
+                    <img src="/images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                </a>
+            </div>            
             
             <div class="image-title">StatsBot</div>
             <div class="image-description">A discord bot for tracking user statistics.</div>
