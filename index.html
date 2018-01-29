@@ -22,20 +22,17 @@
             {
                 font-size: 300%;
                 margin-bottom: 0px;
-                text-indent: 250px;
                 color: black;
             }
             h2 {
                 font-size: 250%;
                 margin-bottom: 0px;
-                text-indent: 250px;
                 color: white;
             }
             p 
             {
                 font-size: 150%;
                 margin-bottom: 0px;
-                text-indent: 250px;
                 color: black;
             }
 
@@ -56,19 +53,48 @@
             .portfolio-header {
                 background-color: white;
                 overflow: hidden;
+                padding-left: 250px;
             }
             .portfolio-released {
                 background-color: #3ac969;
                 overflow: hidden;
+                padding-left: 250px;
+            }
+            .portfolio-header:after {
+                content: "";
+                background-color: #3ac969;
+                overflow: hidden;
+                position: absolute;
+                height: 20px;
             }
             .portfolio-in-development {
                 background-color: #0099ec;
                 overflow: hidden;
+                padding-left: 250px;
             }
 
             .portfolio-abandoned {
                 background-color: #ec8d00;
                 overflow: hidden;
+                padding-left: 250px;
+            }
+            .image-container {
+                position: relative;
+                text-align: left;
+                color: white;
+                padding-bottom: 20px;
+            }
+            .image-title {
+                position: absolute;
+                top: 8px;
+                left: 16px;
+                font-size: 200%;
+            }
+            .image-description {
+                position: absolute;
+                top: 42px;
+                left: 16px;
+                font-size: 120%;
             }
            
         </style>
@@ -76,7 +102,7 @@
 <body>
 
     <div class="topnav">
-        <div class="Links" style="margin-left: 225px">
+        <div class="Links" style="margin-left: 230px">
            
             <a href="/">Portfolio</a>
             <a href="/info.html">Info</a>
@@ -97,23 +123,31 @@
     <div class="portfolio-released">
             
         <div class="title"><h2>Released</h2></div>
-        <div class="subtitle" style="margin-bottom: 100px">
+        <div class="subtitle" style="margin-bottom: 10px">
             <p>Projects that are available to the public but might still be in development.</p>
         </div>
-        <img src="/images/stats_thumb.png" style="padding-left:250px; width:450px;height:450px;" />
+        <div class="image-container">
+            <a href="/projects/statsbot.html">
+                <img src="/images/stats_thumb.png" style="width: 450px;height: 450px;border: 0;" />
+            </a>
+            
+            <div class="image-title">StatsBot</div>
+            <div class="image-description">A discord bot for tracking user statistics.</div>
+        </div>
+        
         
     </div>
 
     <div class="portfolio-in-development">
-        <div class="title"><h2>In Progress</h2></div>
-        <div class="subtitle" style="margin-bottom: 100px">
+        <div class="title"><h2>In Development</h2></div>
+        <div class="subtitle" style="margin-bottom: 10px">
             <p>Projects currently in development.</p>
         </div>
     </div>
 
     <div class="portfolio-abandoned">
         <div class="title"><h2>Abandoned</h2></div>
-        <div class="subtitle" style="margin-bottom: 100px; color: white">
+        <div class="subtitle" style="margin-bottom: 10px; color: white">
             <p>Projects that have been abandoned. Consists mostly of projects for learning and for university courses.</p>
         </div>
     </div>
