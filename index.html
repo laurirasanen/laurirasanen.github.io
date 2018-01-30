@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="./style.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         <title>Portfolio - Lauri R&auml;s&auml;nen</title>
         <style>
@@ -16,25 +17,6 @@
                 color: black;
             }
 
-            .topnav {
-                background-color: #333;
-                overflow: hidden;
-                font-family: 'titillium_webregular';
-                
-            }
-            .topnav-container {
-                max-width: 960px;
-                margin: auto;
-            }
-            .topnav a 
-            {
-                float: left;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 10px 50px 10px 0px;
-                text-decoration: none;
-                font-size: 150%;
-            }
             .projects-header {
                 background-color: white;
                 overflow: hidden;
@@ -68,7 +50,7 @@
                 max-width: 960px;
                 margin: auto;
             }
-            .image-container {
+            .image-container, .image-container2, .image-container3, .image-container4 {
                 position: relative;
                 text-align: left;
                 color: white;
@@ -76,95 +58,25 @@
                 display: inline-block;
             }
 
-            .image:hover 
+            .image:hover, .image2:hover, .image3:hover, image4:hover
             {
                 filter: brightness(50%);
             }
-            .image-title {
+            .image-title, .image-title2, .image-title3, .image-title4 {
                 position: absolute;
                 top: 8px;
                 left: 16px;
                 font-size: 200%;
+                font-family: 'titillium_webregular';
+                color: rgba(255, 255, 255, 0.9);
             }
-            .image-description {
+            .image-description, .image-description2, .image-description3, .image-description4 {
                 position: absolute;
                 top: 42px;
                 left: 16px;
                 font-size: 120%;
-            }
-            .image-container2 {
-                position: relative;
-                text-align: left;
-                color: white;
-                padding-bottom: 20px;
-                display: inline-block;
-            }
-            .image2:hover {
-                filter: brightness(50%);
-            }
-
-            .image-title2 {
-                position: absolute;
-                top: 8px;
-                left: 16px;
-                font-size: 200%;
-            }
-
-            .image-description2 {
-                position: absolute;
-                top: 42px;
-                left: 16px;
-                font-size: 120%;
-            }
-            .image-container3 {
-                position: relative;
-                text-align: left;
-                color: white;
-                padding-bottom: 20px;
-                display: inline-block;
-            }
-
-            .image3:hover {
-                filter: brightness(50%);
-            }
-
-            .image-title3 {
-                position: absolute;
-                top: 8px;
-                left: 16px;
-                font-size: 200%;
-            }
-
-            .image-description3 {
-                position: absolute;
-                top: 42px;
-                left: 16px;
-                font-size: 120%;
-            }
-            .image-container4 {
-                position: relative;
-                text-align: left;
-                color: white;
-                padding-bottom: 20px;
-                display: inline-block;
-            }
-
-            .image4:hover {
-                filter: brightness(50%);
-            }
-
-            .image-title4 {
-                position: absolute;
-                top: 8px;
-                left: 16px;
-                font-size: 200%;
-            }
-
-            .image-description4 {
-                position: absolute;
-                top: 42px;
-                left: 16px;
-                font-size: 120%;
+                font-family: 'titillium_webregular';
+                color: rgba(255, 255, 255, 0.9);
             }
             .subtitle-header {
                 margin-bottom: 100px;
@@ -178,7 +90,7 @@
         <div class="topnav-container">
             <div class="Links">
                 <a href="/">Projects</a>
-                <a href="/info.html">Info</a>
+                <a href="/about.html">About</a>
             </div>
         </div>     
     </div>
@@ -212,12 +124,12 @@
             </div>
             <div class="image-container2">
                 <div class="image2">
-                    <a href="./projects/statsbot.html">
-                        <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                    <a href="./projects/sourcemod.html">
+                        <img src="./images/sourcemod_thumb.png" style="width: 425px;height: 425px;border: 0;" />
                     </a>
                 </div>
-                <div class="image-title2">Placeholder</div>
-                <div class="image-description2">Placeholder.</div>
+                <div class="image-title2">Sourcemod plugins</div>
+                <div class="image-description2">A collection of sourcemod plugins.</div>
             </div>
         </div>
         </div>
