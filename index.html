@@ -7,50 +7,66 @@
         <title>Portfolio - Lauri R&auml;s&auml;nen</title>
         <style>
             h2 {
-                color: white;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            p {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            p.font2 {
+                color: black;
             }
 
             .topnav {
                 background-color: #333;
                 overflow: hidden;
                 font-family: 'titillium_webregular';
+                
+            }
+            .topnav-container {
+                max-width: 960px;
+                margin: auto;
             }
             .topnav a 
             {
                 float: left;
                 color: #f2f2f2;
                 text-align: center;
-                padding: 10px 25px;
+                padding: 10px 50px 10px 0px;
                 text-decoration: none;
                 font-size: 150%;
             }
-            .portfolio-header {
+            .projects-header {
                 background-color: white;
                 overflow: hidden;
-                padding-left: 250px;
+
+
             }
-            .portfolio-released {
+            .projects-released {
                 background-color: #3ac969;
                 overflow: hidden;
-                padding-left: 250px;
+
             }
-            .portfolio-header:after {
+            .projects-header:after {
                 content: "";
                 background-color: #3ac969;
                 overflow: hidden;
                 position: absolute;
                 height: 20px;
             }
-            .portfolio-in-development {
+            .projects-in-development {
                 background-color: #0099ec;
                 overflow: hidden;
-                padding-left: 250px;
+
             }
 
-            .portfolio-abandoned {
+            .projects-abandoned {
                 background-color: #ec8d00;
                 overflow: hidden;
-                padding-left: 250px;
+                
+            }
+            .container0, .container1, .container2, .container3 {
+                max-width: 960px;
+                margin: auto;
             }
             .image-container {
                 position: relative;
@@ -150,85 +166,99 @@
                 left: 16px;
                 font-size: 120%;
             }
+            .subtitle-header {
+                margin-bottom: 100px;
+            }
+            
         </style>
     </head>
 <body>
 
     <div class="topnav">
-        <div class="Links" style="margin-left: 230px">
-           
-            <a href="/">Projects</a>
-            <a href="/info.html">Info</a>
+        <div class="topnav-container">
+            <div class="Links">
+                <a href="/">Projects</a>
+                <a href="/info.html">Info</a>
+            </div>
+        </div>     
+    </div>
+
+
+
+    <div class="projects-header">
+        <div class="container0">
+            <div class="title"><h1>Projects</h1></div>
+            <div class="subtitle-header">
+                <p class="font2">A collection of programming and/or game-related projects in various stages of development.</p>
+            </div>
         </div>
         
     </div>
 
-
-
-    <div class="portfolio-header">
-
-        <div class="title"><h1>Projects</h1></div>
-        <div class="subtitle" style="margin-bottom: 100px">
-            <p>A collection of programming and/or game-related projects in various stages of development.</p>
+    <div class="projects-released">
+        <div class="container1">
+            <div class="title"><h2>Released</h2></div>
+            <div class="subtitle" style="margin-bottom: 10px">
+                <p>Projects that are available to the public but might still be in development.</p>
+            </div>
+            <div class="image-container">
+                <div class="image">
+                    <a href="./projects/statsbot.html">
+                        <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                    </a>
+                </div>
+                <div class="image-title">StatsBot</div>
+                <div class="image-description">A discord bot for tracking user statistics.</div>
+            </div>
+            <div class="image-container2">
+                <div class="image2">
+                    <a href="./projects/statsbot.html">
+                        <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                    </a>
+                </div>
+                <div class="image-title2">Placeholder</div>
+                <div class="image-description2">Placeholder.</div>
+            </div>
         </div>
+        </div>
+        
+    
+    <div class="projects-in-development">
+        <div class="container2">
+            <div class="title"><h2>In Development</h2></div>
+            <div class="subtitle" style="margin-bottom: 10px">
+                <p>Projects currently in development.</p>
+            </div>
+            <div class="image-container3">
+                <div class="image3">
+                    <a href="./projects/statsbot.html">
+                        <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                    </a>
+                </div>
+                <div class="image-title3">Placeholder</div>
+                <div class="image-description3">Placeholder.</div>
+            </div>  
+        </div>
+        
     </div>
 
-    <div class="portfolio-released">
-            
-        <div class="title"><h2>Released</h2></div>
-        <div class="subtitle" style="margin-bottom: 10px">
-            <p>Projects that are available to the public but might still be in development.</p>
-        </div>
-        <div class="image-container">
-            <div class="image">
-                <a href="./projects/statsbot.html">
-                    <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
-                </a>
+    <div class="projects-abandoned">
+        <div class="container3">
+            <div class="title"><h2>Abandoned</h2></div>
+            <div class="subtitle" style="margin-bottom: 10px; color: white">
+                <p>Projects that have been abandoned. Consists mostly of projects for learning and for university courses.</p>
             </div>
-            <div class="image-title">StatsBot</div>
-            <div class="image-description">A discord bot for tracking user statistics.</div>
+            <div class="image-container4">
+                <div class="image4">
+                    <a href="./projects/statsbot.html">
+                        <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
+                    </a>
+                </div>
+                <div class="image-title4">Placeholder</div>
+                <div class="image-description4">Placeholder.</div>
+            </div>  
         </div>
-        <div class="image-container2">
-            <div class="image2">
-                <a href="./projects/statsbot.html">
-                    <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
-                </a>
-            </div>
-            <div class="image-title2">Placeholder</div>
-            <div class="image-description2">Placeholder.</div>
-        </div>        
-    </div>
-
-    <div class="portfolio-in-development">
-        <div class="title"><h2>In Development</h2></div>
-        <div class="subtitle" style="margin-bottom: 10px">
-            <p>Projects currently in development.</p>
-        </div>
-        <div class="image-container3">
-            <div class="image3">
-                <a href="./projects/statsbot.html">
-                    <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
-                </a>
-            </div>
-            <div class="image-title3">Placeholder</div>
-            <div class="image-description3">Placeholder.</div>
-        </div>  
-    </div>
-
-    <div class="portfolio-abandoned">
-        <div class="title"><h2>Abandoned</h2></div>
-        <div class="subtitle" style="margin-bottom: 10px; color: white">
-            <p>Projects that have been abandoned. Consists mostly of projects for learning and for university courses.</p>
-        </div>
-        <div class="image-container4">
-            <div class="image4">
-                <a href="./projects/statsbot.html">
-                    <img src="./images/stats_thumb.png" style="width: 425px;height: 425px;border: 0;" />
-                </a>
-            </div>
-            <div class="image-title4">Placeholder</div>
-            <div class="image-description4">Placeholder.</div>
-        </div>  
+        
     </div>
 
 </body>

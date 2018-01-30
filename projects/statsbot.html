@@ -13,28 +13,19 @@
         h1,h2,p {
         color: white;
         }
-        .topnav {
-            background-color: #333;
-            overflow: hidden;
-            font-family: titillium_webregular;
-        }
-
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-size: 150%;
-        }
         .container {
             position: relative;
             padding: 0px;
             margin: 0px;
+            background-image: url("../images/stats_banner.png");
+            height: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .contents {
-            background: white;
+            background: white;            
         }
 
         .gradient {
@@ -54,17 +45,6 @@
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
         }
 
-        .header
-        {
-            padding-left: 250px;
-        }
-        .features {
-            padding-left: 250px;
-        }
-        .screenshots 
-        {
-            padding-left: 250px;
-        }
         .image-container0 {
             position: relative;
             text-align: left;
@@ -101,25 +81,26 @@
             height: 245px;
             overflow: hidden;
         }
-        .source {
-            padding-left: 250px;
-            padding-bottom: 20px;
+        .header, .features, .screenshots, .source {
+            max-width: 960px;
+            margin: auto;
         }
-
+        
     </style>
 </head>
 <body>
 
     <div class="topnav">
-        <div class="Links" style="margin-left: 230px">
-
-            <a href="/">Portfolio</a>
-            <a href="/info.html">Info</a>
+        <div class="topnav-container">
+            <div class="Links">
+                <a href="/">Projects</a>
+                <a href="/info.html">Info</a>
+            </div>
         </div>
     </div>
     <div class="container">
         <div class="contents">
-            <img src="../images/stats_banner.png" style="width: 1920px;height: 800px;border: 0;" />
+
         </div>
         <div class="gradient">
         </div>
