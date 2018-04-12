@@ -1,0 +1,65 @@
+[
+	{
+		"title": "Writer Ride",
+		"description": "A project for Global Game Jam 2018.",
+		"thumbPath": "./images/writerride_thumb.png",
+		"path": "./projects/writerride.html",
+		"status": "released"
+	},
+	{
+		"title": "StatsBot",
+		"description": "A discord bot for tracking user statistics.",
+		"thumbPath": "./images/stats_thumb.png",
+		"path": "./projects/statsbot.html",
+		"status": "released"
+	},
+	{
+		"title": "SourceMod plugins",
+		"description": "A collection of SourceMod plugins.",
+		"thumbPath": "./images/sourcemod_thumb.png",
+		"path": "./projects/sourcemod.html",
+		"status": "released"
+	},
+	{
+		"title": "MushroomJam",
+		"description": "A project for Back to School Game Jam 2017.",
+		"thumbPath": "./images/mushroomjam_thumb.png",
+		"path": "./projects/mushroomjam.html",
+		"status": "released"
+	},
+	{
+		"title": "TankGame",
+		"description": "A game made from scratch in C#.",
+		"thumbPath": "./images/tankgame_thumb.png",
+		"path": "./projects/tankgame.html",
+		"status": "released"
+	},
+	{
+		"title": "Source movement",
+		"description": "Source Engine type movement in Unity.",
+		"thumbPath": "./images/sourcemovement_thumb.png",
+		"path": "./projects/sourcemovement.html",
+		"status": "abandoned"
+	},
+	{
+		"title": "Muake",
+		"description": "First person online platformer.",
+		"thumbPath": "./images/muake_thumb.png",
+		"path": "./projects/muake.html",
+		"status": "abandoned"
+	},
+	{
+		"title": "Blender practice",
+		"description": "Models made in blender.",
+		"thumbPath": "./images/blender_thumb.png",
+		"path": "./projects/blender.html",
+		"status": "misc"
+	},
+	{
+		"title": "DiscordStats",
+		"description": "Website for visualising Discord statistics.",
+		"thumbPath": "./images/discordstats_thumb.png",
+		"path": "./projects/discordstats.html",
+		"status": "indev"
+	}
+]
