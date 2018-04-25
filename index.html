@@ -143,6 +143,7 @@
     </div>
 
     <script>
+        console.log();
         $.ajax({
             method: 'GET',
             url: './projectlist.txt',
@@ -156,7 +157,7 @@
                     <div class="image-container">
                         <div class="image">
                             <a href=${projects[i].path}>
-                                <img src=${projects[i].thumbPath} style="width: 425px;height: 425px;border: 0;" />
+                                <img src=${projects[i].thumbPath} style="width: ${window.innerWidth < 425 ? window.innerWidth + 'px' : '425px'};height: auto;border: 0;" />
                             </a>
                             <div class="image-title">${projects[i].title}</div>
                             <div class="image-description">${projects[i].description}</div>
