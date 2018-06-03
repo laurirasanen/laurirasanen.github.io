@@ -92,7 +92,7 @@
         <div class="description">
             <p>
                 A TF2 plugin for real-time chat translation using Google Cloud Translation API.
-                <br />
+                <br /><br />
                 Source: <a href="https://github.com/laurirasanen/sm-translate/">https://github.com/laurirasanen/sm-translate/</a>
             </p>
         </div>
@@ -101,10 +101,13 @@
         <div class="title"><h2>Rampbugfix</h2></div>
         <div class="description">
             <p>
-                A plugin that I've rewritten countless times trying to make it work.<br />
-                The idea was to prevent ramp bugs, which occasionally make you stop suddenly when sliding along a ramp, caused by some issue with the Source engine.<br />
-                The plugin itself technically works, but something about how Source engine works will occasionally give you a massive speed boost if you happen to rampbug and shoot a rocket at the same time.
-                <br />
+                A plugin that I've rewritten countless times with the help of jayess.<br />
+                The idea was to prevent ramp bugs, which occasionally make you stop suddenly when sliding along a ramp, caused by some issue with the Source engine.
+				It turns out that hooking and preventing CTFGameMovement::SetGroundEntity() from being called fixes at least some of them.
+                <br /><br />
+                Made in collaboration with jayess.<br />
+                <a href="https://github.com/jsza/">https://github.com/jsza/</a>
+                <br /><br />
                 Source: <a href="https://github.com/laurirasanen/rampbugfix/">https://github.com/laurirasanen/rampbugfix/</a>
             </p>
         </div>
@@ -114,14 +117,14 @@
         <div class="description">
             <p>
                 A plugin intended for stopping stickybombs from bouncing off other players.<br />
-                Even though stickybombs should not bounce off your teammates, occasionally they still do. This usually happens if you hit them in the head.<br />
-                This little plugin makes stickies pass straight through teammates and even enemies if you so wish.<br />
-                Intended for the jumping community, because it's annoying to have your sticky fly to God knows where when there are multiple people on the same part of the map.<br />
-                <br />
-                Made in collaboration with Jayess and JoinedSenses.<br />
+                Even though stickybombs should not bounce off your teammates, occasionally they still do. This usually happens if you hit them in the head.
+                This little plugin makes stickies pass straight through teammates and even enemies if you so wish.
+                Intended for the jumping community, because it's annoying to have your sticky fly to God knows where when there are multiple people on the same part of the map.
+                <br /><br />
+                Made in collaboration with jayess and JoinedSenses.<br />
                 <a href="https://github.com/jsza/">https://github.com/jsza/</a><br />
-                <a href="https://github.com/joinedsenses">https://github.com/joinedsenses</a><br />
-                <br />
+                <a href="https://github.com/joinedsenses">https://github.com/joinedsenses</a>
+                <br /><br />
                 Source: <a href="https://github.com/laurirasanen/stopstickybounce/">https://github.com/laurirasanen/stopstickybounce/</a>
             </p>
         </div>
@@ -131,18 +134,14 @@
         <div class="description">
             <p>
                 A plugin for detecting freezeglitches.<br />
-                Freezeglitching is when a player purposefully lags themselves mid-air to gain an unfair speed boost.<br />
-                Intended for the Tempus jump network, because freezeglitching to gain an advantage while speedrunning is pretty low.<br />
-                The idea was to automate detection of freezeglitched runs, so that people wouldn't get away with doing it.<br />
-                Not intended to be an automated ban system but rather a run flagging system.<br />
-                Will still require an admin to watch the STV demo after the fact, but should decentivise people from doing it and stop them from getting away with it.<br />
-                Tempus developer, Jayess, wanted to turn this into a prevention system, where players would not be able to shoot for a while after freezing.<br />
-                However, this solution was screwing over people with laggy computers/connection and was rolled back.<br />
-                Currently the plugin is ready to go, but lacking event hooking/implementation on Tempus backend.<br />
-                <br />
-                Made in collaboration with Jayess.<br />
-                <a href="https://github.com/jsza/">https://github.com/jsza/</a><br />
-                <br />
+                Freezeglitching is when a player purposefully lags themselves mid-air to gain an unfair speed boost.
+                Intended for the Tempus jump network, because freezeglitching to gain an advantage while speedrunning is an issue that we sometimes have to deal with.
+                The idea was to automate detection of freezeglitched runs, so that people wouldn't get away with doing it.
+                Somewhat functional but not really, will need to figure out a better way to combat this.
+				<br /><br />
+                Made in collaboration with jayess.<br />
+                <a href="https://github.com/jsza/">https://github.com/jsza/</a>
+				<br /><br />             
                 Source: <a href="https://github.com/laurirasanen/detectfreezeglitch/">https://github.com/laurirasanen/detectfreezeglitch/</a>
             </p>
         </div>
