@@ -59,7 +59,7 @@
 		"title": "TempusTV",
 		"description": "Automated rocketjump world record stream.",
 		"thumbPath": "./images/placeholder_thumb.png",
-		"path": "https://www.twitch.tv/pancakelarry/",
+		"path": "https://www.twitch.tv/pancakelarry",
 		"status": "indev"
 	},
 	{
