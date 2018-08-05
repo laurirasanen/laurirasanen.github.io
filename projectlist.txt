@@ -63,6 +63,13 @@
 		"status": "indev"
 	},
 	{
+		"title": "GA-BOT",
+		"description": "Rocketjumping genetic algorithm.",
+		"thumbPath": "./images/ga-bot_thumb.png",
+		"path": "https://youtu.be/CFy1F5tMVOI",
+		"status": "indev"
+	},
+	{
 		"title": "Blender practice",
 		"description": "Models made in blender.",
 		"thumbPath": "./images/blender_thumb.png",
