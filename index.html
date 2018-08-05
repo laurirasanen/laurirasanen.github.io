@@ -109,14 +109,14 @@
             <div class="inner-container">
                 <div class="title"><h2>Released</h2></div>
                 <div class="subtitle" style="margin-bottom: 10px">
-                    <p>Projects that are available to the public but might still be in development.</p>
+                    <p>Projects that are available to the public.</p>
                 </div>
             </div>
         </div>
 
         <div class="projects-indev">
             <div class="inner-container">
-                <div class="title"><h2>In Development</h2></div>
+                <div class="title"><h2>In The Works</h2></div>
                 <div class="subtitle" style="margin-bottom: 10px">
                     <p>Projects currently in development.</p>
                 </div>
@@ -127,7 +127,7 @@
             <div class="inner-container">
                 <div class="title"><h2>Abandoned</h2></div>
                 <div class="subtitle" style="margin-bottom: 10px; color: white">
-                    <p>Projects that have been abandoned. Consists mostly of projects for learning and for university courses.</p>
+                    <img src="./images/abandoned.png" style="width: 425px;height: auto;border: 0;" />
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
             <div class="inner-container">
                 <div class="title"><h2>Miscellaneous</h2></div>
                 <div class="subtitle" style="margin-bottom: 10px; color: white">
-                    <p>Miscellaneous projects.</p>
+                    <p>Miscellaneous stuff.</p>
                 </div>
             </div>
         </div>
@@ -153,17 +153,32 @@
 
                 for (var i in projects)
                 {
-                    $(`
-                    <div class="image-container">
-                        <div class="image">
-                            <a href=${projects[i].path}>
-                                <img src=${projects[i].thumbPath} style="width: ${window.innerWidth < 425 ? window.innerWidth + 'px' : '425px'};height: auto;border: 0;" />
-                            </a>
-                            <div class="image-title">${projects[i].title}</div>
-                            <div class="image-description">${projects[i].description}</div>
-                        </div>
-                    </div > `)
+					if(projects[i].path !== "null")
+					{
+						$(`
+						<div class="image-container">
+							<div class="image">
+								<a href=${projects[i].path}>
+									<img src=${projects[i].thumbPath} style="width: ${window.innerWidth < 425 ? window.innerWidth + 'px' : '425px'};height: auto;border: 0;" />
+								</a>
+								<div class="image-title">${projects[i].title}</div>
+								<div class="image-description">${projects[i].description}</div>
+							</div>
+						</div > `)
                         .appendTo($(`.projects-${projects[i].status}`).find('.inner-container'));
+					}
+					else
+					{
+						$(`
+						<div class="image-container">
+							<div class="image">
+								<img src=${projects[i].thumbPath} style="width: ${window.innerWidth < 425 ? window.innerWidth + 'px' : '425px'};height: auto;border: 0;" />
+								<div class="image-title">${projects[i].title}</div>
+								<div class="image-description">${projects[i].description}</div>
+							</div>
+						</div > `)
+                        .appendTo($(`.projects-${projects[i].status}`).find('.inner-container'));
+					}
                 }
             }
         });
