@@ -35,13 +35,6 @@
 		"status": "released"
 	},
 	{
-		"title": "Sketchfab",
-		"description": "",
-		"thumbPath": "./images/sketchfab_thumb.png",
-		"path": "https://sketchfab.com/laurirasanen",
-		"status": "released"
-	},
-	{
 		"title": "Source movement",
 		"description": "Source Engine type movement in Unity.",
 		"thumbPath": "./images/sourcemovement_thumb.png",
@@ -81,6 +74,13 @@
 		"description": "Models made in blender.",
 		"thumbPath": "./images/blender_thumb.png",
 		"path": "./projects/blender.html",
+		"status": "misc"
+	},
+	{
+		"title": "Sketchfab",
+		"description": "",
+		"thumbPath": "./images/sketchfab_thumb.png",
+		"path": "https://sketchfab.com/laurirasanen",
 		"status": "misc"
 	}
 ]
