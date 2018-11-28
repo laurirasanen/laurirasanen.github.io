@@ -1,5 +1,12 @@
 [
 	{
+		"title": "TempusTV",
+		"description": "Automated rocketjump world record stream.",
+		"thumbPath": "./images/twitch_thumb.png",
+		"path": "https://www.twitch.tv/tempusrecords",
+		"status": "released"
+	},
+	{
 		"title": "Writer Ride",
 		"description": "A project for Global Game Jam 2018.",
 		"thumbPath": "./images/writerride_thumb.png",
@@ -42,6 +49,13 @@
 		"status": "abandoned"
 	},
 	{
+		"title": "GA-BOT",
+		"description": "Rocketjumping genetic algorithm.",
+		"thumbPath": "./images/ga-bot_thumb.png",
+		"path": "https://youtu.be/CFy1F5tMVOI",
+		"status": "indev"
+	},
+	{
 		"title": "Muake",
 		"description": "First person online platformer.",
 		"thumbPath": "./images/muake_thumb.png",
@@ -54,20 +68,6 @@
 		"thumbPath": "./images/discordstats_thumb.png",
 		"path": "./projects/discordstats.html",
 		"status": "abandoned"
-	},
-	{
-		"title": "TempusTV",
-		"description": "Automated rocketjump world record stream.",
-		"thumbPath": "./images/placeholder_thumb.png",
-		"path": "https://www.twitch.tv/tempusrecords",
-		"status": "indev"
-	},
-	{
-		"title": "GA-BOT",
-		"description": "Rocketjumping genetic algorithm.",
-		"thumbPath": "./images/ga-bot_thumb.png",
-		"path": "https://youtu.be/CFy1F5tMVOI",
-		"status": "indev"
 	},
 	{
 		"title": "Blender practice",
