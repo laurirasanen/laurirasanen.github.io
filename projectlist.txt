@@ -14,10 +14,17 @@
 		"status": "released"
 	},
 	{
-		"title": "StatsBot",
-		"description": "A discord bot for tracking user statistics.",
-		"thumbPath": "./images/stats_thumb.png",
-		"path": "./projects/statsbot.html",
+		"title": "TankGame",
+		"description": "A game made from scratch in C#.",
+		"thumbPath": "./images/tankgame_thumb.png",
+		"path": "./projects/tankgame.html",
+		"status": "released"
+	},
+	{
+		"title": "MushroomJam",
+		"description": "A game made in 48 hours for a game jam.",
+		"thumbPath": "./images/mushroomjam_thumb.png",
+		"path": "./projects/mushroomjam.html",
 		"status": "released"
 	},
 	{
@@ -26,27 +33,6 @@
 		"thumbPath": "./images/sourcemod_thumb.png",
 		"path": "./projects/sourcemod.html",
 		"status": "released"
-	},
-	{
-		"title": "MushroomJam",
-		"description": "A project for Back to School Game Jam 2017.",
-		"thumbPath": "./images/mushroomjam_thumb.png",
-		"path": "./projects/mushroomjam.html",
-		"status": "released"
-	},
-	{
-		"title": "TankGame",
-		"description": "A game made from scratch in C#.",
-		"thumbPath": "./images/tankgame_thumb.png",
-		"path": "./projects/tankgame.html",
-		"status": "released"
-	},
-	{
-		"title": "Source movement",
-		"description": "Source Engine type movement in Unity.",
-		"thumbPath": "./images/sourcemovement_thumb.png",
-		"path": "./projects/sourcemovement.html",
-		"status": "abandoned"
 	},
 	{
 		"title": "GA-BOT",
@@ -63,6 +49,13 @@
 		"status": "indev"
 	},
 	{
+		"title": "",
+		"description": "",
+		"thumbPath": "./images/abandoned.png",
+		"path": "",
+		"status": "abandoned"
+	},
+	{
 		"title": "Muake",
 		"description": "First person online platformer.",
 		"thumbPath": "./images/muake_thumb.png",
@@ -70,10 +63,24 @@
 		"status": "abandoned"
 	},
 	{
+		"title": "StatsBot",
+		"description": "A discord bot for tracking user statistics.",
+		"thumbPath": "./images/stats_thumb.png",
+		"path": "./projects/statsbot.html",
+		"status": "abandoned"
+	},
+	{
 		"title": "DiscordStats",
 		"description": "Website for visualising Discord statistics.",
 		"thumbPath": "./images/discordstats_thumb.png",
 		"path": "./projects/discordstats.html",
+		"status": "abandoned"
+	},
+	{
+		"title": "Source movement",
+		"description": "Source Engine type movement in Unity.",
+		"thumbPath": "./images/sourcemovement_thumb.png",
+		"path": "./projects/sourcemovement.html",
 		"status": "abandoned"
 	},
 	{
