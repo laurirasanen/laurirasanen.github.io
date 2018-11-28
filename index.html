@@ -156,7 +156,7 @@
 
                 for (var i in projects)
                 {
-					if(projects[i].path !== "")
+					if(projects[i].path.length > 0 && projects[i].path !== "static")
 					{
 						$(`
 						<div class="image-container">
