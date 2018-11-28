@@ -170,6 +170,16 @@
 						</div > `)
                         .appendTo($(`.projects-${projects[i].status}`).find('.inner-container'));
 					}
+					else if(projects[i].path == "static")
+					{
+						$(`
+						<div class="image-container">
+							<div class="image-static">
+								<img src=${projects[i].thumbPath} style="width: ${window.innerWidth < 425 ? window.innerWidth + 'px' : '425px'};height: auto;border: 0; background-color: #2f2f2f;" />
+							</div>
+						</div > `)
+                        .appendTo($(`.projects-${projects[i].status}`).find('.inner-container'));
+					}
 					else
 					{
 						$(`

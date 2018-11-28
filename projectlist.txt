@@ -52,7 +52,7 @@
 		"title": "",
 		"description": "",
 		"thumbPath": "./images/abandoned.png",
-		"path": "",
+		"path": "static",
 		"status": "abandoned"
 	},
 	{
