@@ -44,7 +44,7 @@
 	{
 		"title": "Frog Out!",
 		"description": "A 4-player party game.",
-		"thumbPath": "./images/placeholder_thumb.png",
+		"thumbPath": "./images/frogout_thumb.png",
 		"path": "https://store.steampowered.com/app/921720/Frog_Out",
 		"status": "indev"
 	},
