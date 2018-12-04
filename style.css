@@ -18,10 +18,10 @@ html, body {
 }
 
 @font-face {
-    font-family: 'titillium_webregular';
-    src: url('./fonts/titilliumweb-regular-webfont.woff2') format('woff2'), 
-        url('./fonts/titilliumweb-regular-webfont.woff') format('woff'), 
-        url('./fonts/titilliumWeb-regular.ttf') format('truetype');
+    font-family: 'Lato', sans-serif;
+    src: url('./fonts/lato-regular-webfont.woff2') format('woff2'), 
+        url('./fonts/lato-regular-webfont.woff') format('woff'), 
+        url('./fonts/lato-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,32 +29,32 @@ h1 {
     font-size: 300%;
     margin-bottom: 0px;
     color: black;
-    font-family: titillium_webregular;
+    font-family: 'Lato', sans-serif;
 }
 
 p {
     font-size: 150%;
     margin-bottom: 0px;
     color: black;
-    font-family: titillium_webregular;
+    font-family: 'Lato', sans-serif;
 }
 p.font2 {
     font-size: 150%;
     margin-bottom: 0px;
     color: black;
-    font-family: titillium_webregular;
+    font-family: 'Lato', sans-serif;
 }
 
 h2 {
     font-size: 250%;
     margin-bottom: 0px;
     color: black;
-    font-family: titillium_webregular;
+    font-family: 'Lato', sans-serif;
 }
 .topnav {
     background-color: #25292c;
     overflow: hidden;
-    font-family: 'titillium_webregular';
+    font-family: 'Lato', sans-serif;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -65,7 +65,7 @@ h2 {
 
 .topnav a {
     float: left;
-    font-family: 'titillium_webregular';
+    font-family: 'Lato', sans-serif;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
     padding: 10px 50px 10px 0px;
