@@ -35,13 +35,6 @@
 		"status": "released"
 	},
 	{
-		"title": "GA-BOT",
-		"description": "Rocketjumping genetic algorithm.",
-		"thumbPath": "./images/ga-bot_thumb.png",
-		"path": "https://youtu.be/CFy1F5tMVOI",
-		"status": "indev"
-	},
-	{
 		"title": "Frog Out!",
 		"description": "A 4-player party game.",
 		"thumbPath": "./images/frogout_thumb.png",
@@ -53,6 +46,13 @@
 		"description": "",
 		"thumbPath": "./images/abandoned.png",
 		"path": "static",
+		"status": "abandoned"
+	},
+	{
+		"title": "GA-BOT",
+		"description": "Rocketjumping genetic algorithm.",
+		"thumbPath": "./images/ga-bot_thumb.png",
+		"path": "https://youtu.be/CFy1F5tMVOI",
 		"status": "abandoned"
 	},
 	{
@@ -74,13 +74,6 @@
 		"description": "Website for visualising Discord statistics.",
 		"thumbPath": "./images/discordstats_thumb.png",
 		"path": "./projects/discordstats.html",
-		"status": "abandoned"
-	},
-	{
-		"title": "Source movement",
-		"description": "Source Engine type movement in Unity.",
-		"thumbPath": "./images/sourcemovement_thumb.png",
-		"path": "./projects/sourcemovement.html",
 		"status": "abandoned"
 	},
 	{
