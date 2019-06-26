@@ -7,13 +7,20 @@
 @import 'projects.scss';
 @import 'signup.scss';
 @import 'contact.scss';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 body {
-  font-family: 'Nunito';
+  font-family: 'Noto Sans', sans-serif;
   letter-spacing: 0.0625em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans', sans-serif;
+  text-transform: uppercase!important;
+}
+
 a {
+  font-weight: unset !important;
   color: $primary;
   &:focus,
   &:hover {

@@ -4,7 +4,9 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 #mainNav {
+  text-transform: uppercase !important;
   min-height: 56px;
   background-color: #fff;
 }
@@ -101,13 +103,9 @@
 }
 
 .masthead h1 {
-  font-family: 'Varela Round';
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  font-size: 2rem !important;
+  line-height: 2em !important;
+  letter-spacing: .125em !important;
 }
 
 .masthead h2 {
@@ -142,9 +140,7 @@
   -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
-  font-family: 'Varela Round';
   font-size: 80%;
-  text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
 }
@@ -222,9 +218,7 @@
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
-  font-family: 'Varela Round';
   font-size: 80%;
-  text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
 }
@@ -240,8 +234,6 @@
 
 .contact-section .card h4 {
   font-size: 0.8rem;
-  font-family: 'Varela Round';
-  text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
 
@@ -274,11 +266,17 @@
 }
 
 body {
-  font-family: 'Nunito';
+  font-family: 'Noto Sans', sans-serif;
   letter-spacing: 0.0625em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans', sans-serif;
+  text-transform: uppercase !important;
+}
+
 a {
+  font-weight: unset !important;
   color: #64a19d;
 }
 
