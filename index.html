@@ -79,7 +79,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto text-center" style="padding-bottom: 5rem">
           <h2 class="text-black mb-4">Game projects</h2>
-          <p class="text-black-50">Game projects I've contributed to</p>
+          <p class="text-black-50">Game projects I've worked on</p>
         </div>
       </div>
 
@@ -270,13 +270,13 @@
         <div class="col-lg-8 mx-auto text-center" style="padding-top: 10rem">
           <h2 class="text-black mb-4">Open Source Contributions</h2>
 
-          <a href="https://github.com/momentum-mod/game/pulls?q=author%3Alaurirasanen" target="_blank">Momentum Mod</a>
+          <a href="https://github.com/momentum-mod/game/pulls?q=author%3Alaurirasanen" target="_blank">Momentum Mod<span id="pulls-momentum" /></a>
           <br />
 
-          <a href="https://github.com/arispoloway/tempus-discord-bot/pulls?q=author%3Alaurirasanen" target="_blank">tempus-discord-bot</a>
+          <a href="https://github.com/arispoloway/tempus-discord-bot/pulls?q=author%3Alaurirasanen" target="_blank">tempus-discord-bot<span id="pulls-tempus-discord-bot" /></a>
           <br />
 
-          <a href="https://github.com/Facepunch/Facepunch.Steamworks/pulls?q=author%3Alaurirasanen" target="_blank">Facepunch.Steamworks</a>
+          <a href="https://github.com/Facepunch/Facepunch.Steamworks/pulls?q=author%3Alaurirasanen" target="_blank">Facepunch.Steamworks<span id="pulls-facepunch-steamworks" /></a>
 
         </div>
       </div>
@@ -489,6 +489,38 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/grayscale.min.js"></script>
+
+  <script defer>
+    //$.get("https://api.github.com/search/issues?q=+type:pr+user:momentum-mod+author:laurirasanen&sort=created&order=desc").then((data, success, xhr) =>
+    //{
+    //  console.log(data);
+    //});
+
+    async function getPulls(user, repository, elementId)
+    {
+      jQuery.ajax({
+        type: "GET",
+        url: `https://api.github.com/search/issues?q=+type:pr+repo:${user}/${repository}+author:laurirasanen&sort=created&order=desc`,
+        dataType: "json",
+        cache: false,
+        crossDomain: true,
+        processData: true,
+        success: function (data)
+        {
+          if (data && data.items)
+          {
+            console.log(data);
+            $(`#${elementId}`).html(` - ${data.items.length} pull request${data.items.length > 1 ? 's' : ''}`);
+          }
+        }
+      });
+    }
+
+    getPulls("momentum-mod", "game", "pulls-momentum");
+    getPulls("Facepunch", "Facepunch.Steamworks", "pulls-facepunch-steamworks");
+    getPulls("arispoloway", "tempus-discord-bot", "pulls-tempus-discord-bot");
+    
+  </script>
 
 </body>
 
