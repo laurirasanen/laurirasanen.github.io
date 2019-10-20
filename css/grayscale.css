@@ -202,26 +202,6 @@
   }
 }
 
-.signup-section {
-  padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-signup.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-
-.signup-section .form-inline input {
-  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  height: auto;
-  font-size: 80%;
-  letter-spacing: 0.15rem;
-  border: 0;
-}
-
 .contact-section {
   padding: 5rem 0 0;
 }
@@ -262,6 +242,24 @@
 
 .contact-section .social a:active {
   color: #fff;
+}
+
+.git-pulls::after {
+  display: inline-block;
+  content: ' ';
+  background-image: url("../img/icons/git-pull.svg");
+  background-size: 12px 16px;
+  height: 16px;
+  width: 12px;
+}
+
+.git-commits::after {
+  display: inline-block;
+  content: ' ';
+  background-image: url("../img/icons/git-commit.svg");
+  background-size: 18px 18px;
+  height: 18px;
+  width: 18px;
 }
 
 body {

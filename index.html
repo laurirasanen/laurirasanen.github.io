@@ -388,13 +388,22 @@
         <div class="col-lg-8 mx-auto text-center" style="padding-top: 10rem">
           <h2 class="text-black mb-4">Open Source Contributions</h2>
 
-          <a href="https://github.com/momentum-mod/game/pulls?q=author%3Alaurirasanen" target="_blank">Momentum Mod<span id="pulls-momentum" /></a>
+          <a href="https://github.com/momentum-mod/game/pulls?q=author%3Alaurirasanen" target="_blank">Momentum Mod
+            <span class="git-pulls" id="pulls-momentum" style="visibility: hidden"></span>
+            <span class="git-commits" id="commits-momentum" style="visibility: hidden"></span>
+          </a>
           <br />
 
-          <a href="https://github.com/arispoloway/tempus-discord-bot/pulls?q=author%3Alaurirasanen" target="_blank">tempus-discord-bot<span id="pulls-tempus-discord-bot" /></a>
+          <a href="https://github.com/arispoloway/tempus-discord-bot/pulls?q=author%3Alaurirasanen" target="_blank">tempus-discord-bot
+            <span class="git-pulls" id="pulls-tempus-discord-bot" style="visibility: hidden"></span>
+            <span class="git-commits" id="commits-tempus-discord-bot" style="visibility: hidden"></span>
+          </a>
           <br />
 
-          <a href="https://github.com/Facepunch/Facepunch.Steamworks/pulls?q=author%3Alaurirasanen" target="_blank">Facepunch.Steamworks<span id="pulls-facepunch-steamworks" /></a>
+          <a href="https://github.com/Facepunch/Facepunch.Steamworks/pulls?q=author%3Alaurirasanen" target="_blank">Facepunch.Steamworks
+            <span class="git-pulls" id="pulls-facepunch-steamworks" style="visibility: hidden"></span>
+            <span class="git-commits" id="commits-facepunch-steamworks" style="visibility: hidden"></span>
+          </a>
 
         </div>
       </div>
@@ -581,7 +590,29 @@
         {
           if (data && data.items)
           {
-            $(`#${elementId}`).html(` - ${data.items.length} pull request${data.items.length > 1 ? 's' : ''}`);
+            $(`#${elementId}`).html(` - ${data.items.length}`);
+            $(`#${elementId}`).addClass("visible");
+          }
+        }
+      });
+    }
+
+    async function getCommits(user, repository, elementId)
+    {
+      jQuery.ajax({
+        type: "GET",
+        url: `https://api.github.com/search/commits?q=+repo:${user}/${repository}+author:laurirasanen`,
+        headers: { "Accept": "application/vnd.github.cloak-preview" },
+        dataType: "json",
+        cache: false,
+        crossDomain: true,
+        processData: true,
+        success: function (data)
+        {
+          if (data && data.items)
+          {
+            $(`#${elementId}`).html(`, ${data.items.length}`);
+            $(`#${elementId}`).addClass("visible");
           }
         }
       });
@@ -590,6 +621,10 @@
     getPulls("momentum-mod", "game", "pulls-momentum");
     getPulls("Facepunch", "Facepunch.Steamworks", "pulls-facepunch-steamworks");
     getPulls("arispoloway", "tempus-discord-bot", "pulls-tempus-discord-bot");    
+
+    getCommits("momentum-mod", "game", "commits-momentum");
+    getCommits("Facepunch", "Facepunch.Steamworks", "commits-facepunch-steamworks");
+    getCommits("arispoloway", "tempus-discord-bot", "commits-tempus-discord-bot");   
   </script>
 
 </body>

@@ -1,0 +1,17 @@
+.git-pulls::after {
+    display: inline-block;
+    content: ' ';
+    background-image: url('../img/icons/git-pull.svg');
+    background-size: 12px 16px;
+    height: 16px;
+    width: 12px;
+}
+
+.git-commits::after {
+    display: inline-block;
+    content: ' ';
+    background-image: url('../img/icons/git-commit.svg');
+    background-size: 18px 18px;
+    height: 18px;
+    width: 18px;
+}
