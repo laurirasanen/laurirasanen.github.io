@@ -633,13 +633,14 @@
       });
     }
 
-    getPulls("momentum-mod", "game", "pulls-momentum");
-    getPulls("Facepunch", "Facepunch.Steamworks", "pulls-facepunch-steamworks");
-    getPulls("arispoloway", "tempus-discord-bot", "pulls-tempus-discord-bot");    
+    // Be nice to github api, rate limiting will 403
+    setTimeout(() => {getPulls("momentum-mod", "game", "pulls-momentum");}, 1000);
+    setTimeout(() => {getPulls("Facepunch", "Facepunch.Steamworks", "pulls-facepunch-steamworks");}, 2000);
+    setTimeout(() => {getPulls("arispoloway", "tempus-discord-bot", "pulls-tempus-discord-bot"); }, 3000);
 
-    getCommits("momentum-mod", "game", "commits-momentum");
-    getCommits("Facepunch", "Facepunch.Steamworks", "commits-facepunch-steamworks");
-    getCommits("arispoloway", "tempus-discord-bot", "commits-tempus-discord-bot");   
+    setTimeout(() => {getCommits("momentum-mod", "game", "commits-momentum");}, 4000);
+    setTimeout(() => {getCommits("Facepunch", "Facepunch.Steamworks", "commits-facepunch-steamworks");}, 5000);
+    setTimeout(() => {getCommits("arispoloway", "tempus-discord-bot", "commits-tempus-discord-bot"); }, 6000);   
   </script>
 
 </body>
