@@ -6,15 +6,16 @@
 @import 'projects.scss';
 @import 'contact.scss';
 @import 'user.scss';
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import 'typeface.scss';
+//@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'JetBrains Mono';
   letter-spacing: 0.0625em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'JetBrains Mono';
   text-transform: uppercase!important;
 }
 
@@ -34,6 +35,10 @@ a {
 
 .bg-primary {
   background-color: $primary !important;
+}
+
+.bg-vscode {
+  background-color: $vscode !important;
 }
 
 .text-primary {

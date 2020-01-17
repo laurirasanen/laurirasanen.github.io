@@ -1,7 +1,7 @@
 .git-pulls::after {
     display: inline-block;
     content: ' ';
-    background-image: url('../img/icons/git-pull.svg');
+    background-image: url('../img/icons/git-pull-50.svg');
     background-size: 12px 16px;
     height: 16px;
     width: 12px;
@@ -10,8 +10,13 @@
 .git-commits::after {
     display: inline-block;
     content: ' ';
-    background-image: url('../img/icons/git-commit.svg');
+    background-image: url('../img/icons/git-commit-50.svg');
     background-size: 18px 18px;
     height: 18px;
     width: 18px;
+}
+
+.card {
+    background-color: $vscode-light !important;
+    color: rgba(0, 0, 0, 0.5) !important;
 }

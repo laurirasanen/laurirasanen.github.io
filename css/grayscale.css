@@ -1,21 +1,20 @@
 /*!
  * Start Bootstrap - Grayscale v5.0.6 (https://startbootstrap.com/template-overviews/grayscale)
- * Copyright 2013-2019 Start Bootstrap
+ * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 #mainNav {
   text-transform: uppercase !important;
   min-height: 56px;
-  background-color: #fff;
+  background-color: #bbbbbb;
 }
 
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #64a19d;
-  border: 1px solid #64a19d;
+  color: #ee6002;
+  border: 1px solid #ee6002;
 }
 
 #mainNav .navbar-toggler:focus {
@@ -65,7 +64,7 @@
     color: white;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: #bbbbbb;
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #161616;
@@ -76,15 +75,15 @@
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #64a19d;
+    color: #ee6002;
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: #467370;
+    color: #a24101;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #64a19d;
+    color: #ee6002;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid #ee6002;
   }
 }
 
@@ -145,20 +144,20 @@
 }
 
 .btn-primary {
-  background-color: #64a19d;
+  background-color: #ee6002;
 }
 
 .btn-primary:hover {
-  background-color: #4f837f;
+  background-color: #bb4c02;
 }
 
 .btn-primary:focus {
-  background-color: #4f837f;
+  background-color: #bb4c02;
   color: white;
 }
 
 .btn-primary:active {
-  background-color: #467370 !important;
+  background-color: #a24101 !important;
 }
 
 .about-section {
@@ -182,7 +181,7 @@
 @media (min-width: 992px) {
   .projects-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    border-left: 0.5rem solid #ee6002;
   }
 }
 
@@ -196,7 +195,7 @@
     padding: 5rem;
   }
   .projects-section .project-text hr {
-    border-color: #64a19d;
+    border-color: #ee6002;
     border-width: .25rem;
     width: 30%;
   }
@@ -208,7 +207,7 @@
 
 .contact-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #64a19d;
+  border-bottom: 0.25rem solid #ee6002;
 }
 
 .contact-section .card h4 {
@@ -217,7 +216,7 @@
 }
 
 .contact-section .card hr {
-  border-color: #64a19d;
+  border-color: #ee6002;
   border-width: 0.25rem;
   width: 3rem;
 }
@@ -247,7 +246,7 @@
 .git-pulls::after {
   display: inline-block;
   content: ' ';
-  background-image: url("../img/icons/git-pull.svg");
+  background-image: url("../img/icons/git-pull-50.svg");
   background-size: 12px 16px;
   height: 16px;
   width: 12px;
@@ -256,30 +255,44 @@
 .git-commits::after {
   display: inline-block;
   content: ' ';
-  background-image: url("../img/icons/git-commit.svg");
+  background-image: url("../img/icons/git-commit-50.svg");
   background-size: 18px 18px;
   height: 18px;
   width: 18px;
 }
 
+.card {
+  background-color: #bbbbbb !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("JetBrains Mono"), local("JetBrainsMono"), url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'JetBrains Mono';
   letter-spacing: 0.0625em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'JetBrains Mono';
   text-transform: uppercase !important;
 }
 
 a {
   font-weight: unset !important;
-  color: #64a19d;
+  color: #ee6002;
 }
 
 a:focus, a:hover {
   text-decoration: none;
-  color: #3c6360;
+  color: #893701;
 }
 
 .bg-black {
@@ -287,11 +300,15 @@ a:focus, a:hover {
 }
 
 .bg-primary {
-  background-color: #64a19d !important;
+  background-color: #ee6002 !important;
+}
+
+.bg-vscode {
+  background-color: #1e1e1e !important;
 }
 
 .text-primary {
-  color: #64a19d !important;
+  color: #ee6002 !important;
 }
 
 footer {

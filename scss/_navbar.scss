@@ -1,7 +1,7 @@
 #mainNav {
   text-transform: uppercase!important;
   min-height: 56px;
-  background-color: $white;
+  background-color: #bbbbbb;
   .navbar-toggler {
     font-size: 80%;
     padding: 0.75rem;
@@ -52,7 +52,7 @@
       }
     }
     &.navbar-shrink {
-      background-color: $white;
+      background-color: #bbbbbb;
       .navbar-brand {
         color: $black;
       }
