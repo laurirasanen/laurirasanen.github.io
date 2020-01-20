@@ -264,6 +264,7 @@
 .card {
   background-color: #bbbbbb !important;
   color: rgba(0, 0, 0, 0.5) !important;
+  border-left: .25rem solid #ee6002;
 }
 
 @font-face {
