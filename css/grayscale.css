@@ -45,7 +45,6 @@
     padding-bottom: 0;
     border-bottom: none;
     background-color: transparent;
-    -webkit-transition: background-color 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -53,7 +52,6 @@
     color: rgba(255, 255, 255, 0.5);
   }
   #mainNav .nav-link {
-    -webkit-transition: none;
     transition: none;
     padding: 2rem 1.5rem;
     color: rgba(255, 255, 255, 0.5);
@@ -136,7 +134,6 @@
 }
 
 .btn {
-  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   font-size: 80%;

@@ -1,0 +1,6 @@
+# https://github.com/browserslist/browserslist#readme
+
+defaults
+last 2 versions
+not dead
+>= 0.5%
