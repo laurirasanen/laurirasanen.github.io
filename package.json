@@ -6,7 +6,7 @@
         "start": "gulp watch"
     },
     "description": "Personal website",
-    "homepage": "https://laurirasanen.github.io/,
+    "homepage": "https://laurirasanen.github.io/",
     "license": "MIT",
     "author": "laurirasanen",
     "repository": {
