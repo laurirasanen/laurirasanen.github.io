@@ -1,32 +1,17 @@
 {
-    "title": "Grayscale",
-    "name": "startbootstrap-grayscale",
-    "version": "5.0.6",
+    "title": "laurirasanen.github.io",
+    "name": "laurirasanen.github.io",
+    "version": "1.0.0",
     "scripts": {
         "start": "gulp watch"
     },
-    "description": "A grayscale one page HTML theme for Bootstrap.",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/template-overviews/grayscale",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale/issues",
-        "email": "feedback@startbootstrap.com"
-    },
+    "description": "Personal website",
+    "homepage": "https://laurirasanen.github.io/,
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
+    "author": "laurirasanen",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale.git"
+        "url": "https://github.com/laurirasanen/laurirasanen.github.io.git"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.8.2",
