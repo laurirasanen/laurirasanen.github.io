@@ -1,7 +1,8 @@
 /*!
- * Start Bootstrap - laurirasanen.github.io v1.0.0 (https://laurirasanen.github.io/)
+ * Lauri Räsänen - laurirasanen.github.io v1.0.0 (https://laurirasanen.github.io/)
+ * Copyright 2013-2019 Blackrock Digital LLC
  * Copyright 2013-2020 laurirasanen
- * Licensed under MIT (https://github.com/BlackrockDigital/laurirasanen.github.io/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/laurirasanen/laurirasanen.github.io/blob/master/LICENSE)
  */
 
 #mainNav {
@@ -158,16 +159,6 @@
 
 .btn-primary:active {
   background-color: #a24101 !important;
-}
-
-.about-section {
-  padding-top: 10rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(75%, rgba(22, 22, 22, 0.9)), to(rgba(22, 22, 22, 0.8)));
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
-}
-
-.about-section p {
-  margin-bottom: 5rem;
 }
 
 .projects-section {
