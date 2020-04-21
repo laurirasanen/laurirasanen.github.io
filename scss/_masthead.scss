@@ -13,7 +13,7 @@
     h1 {
         font-size: 2rem !important;
         line-height: 2em !important;
-        letter-spacing: .125em !important;
+        letter-spacing: 0.125em !important;
     }
 
     h2 {
@@ -21,14 +21,14 @@
         font-size: 1rem;
     }
 
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         h1 {
             font-size: 4rem;
             line-height: 4rem;
         }
     }
 
-    @media(min-width: 992px) {
+    @media (min-width: 992px) {
         height: 100vh;
         padding: 0;
 

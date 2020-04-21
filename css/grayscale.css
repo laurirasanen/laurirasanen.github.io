@@ -25,7 +25,7 @@
 #mainNav .navbar-brand {
   color: #161616;
   font-weight: 700;
-  padding: .9rem 0;
+  padding: 0.9rem 0;
 }
 
 #mainNav .navbar-nav .nav-item:hover {
@@ -48,7 +48,7 @@
     transition: background-color 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.5);
   }
   #mainNav .nav-link {
@@ -102,7 +102,7 @@
 .masthead h1 {
   font-size: 2rem !important;
   line-height: 2em !important;
-  letter-spacing: .125em !important;
+  letter-spacing: 0.125em !important;
 }
 
 .masthead h2 {
@@ -137,7 +137,7 @@
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   font-size: 80%;
-  letter-spacing: .15rem;
+  letter-spacing: 0.15rem;
   border: 0;
 }
 
@@ -184,7 +184,7 @@
   }
   .projects-section .project-text hr {
     border-color: #ee6002;
-    border-width: .25rem;
+    border-width: 0.25rem;
     width: 30%;
   }
 }
@@ -233,7 +233,7 @@
 
 .git-pulls::after {
   display: inline-block;
-  content: ' ';
+  content: " ";
   background-image: url("../img/icons/git-pull-50.svg");
   background-size: 12px 16px;
   height: 16px;
@@ -242,7 +242,7 @@
 
 .git-commits::after {
   display: inline-block;
-  content: ' ';
+  content: " ";
   background-image: url("../img/icons/git-commit-50.svg");
   background-size: 18px 18px;
   height: 18px;
@@ -252,25 +252,30 @@
 .card {
   background-color: #bbbbbb !important;
   color: rgba(0, 0, 0, 0.5) !important;
-  border-left: .25rem solid #ee6002;
+  border-left: 0.25rem solid #ee6002;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local("JetBrains Mono"), local("JetBrainsMono"), url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 body {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   letter-spacing: 0.0625em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'JetBrains Mono';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "JetBrains Mono";
   text-transform: uppercase !important;
 }
 

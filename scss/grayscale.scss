@@ -1,48 +1,53 @@
-@import 'variables.scss';
-@import 'navbar.scss';
-@import 'masthead.scss';
-@import 'buttons.scss';
-@import 'projects.scss';
-@import 'contact.scss';
-@import 'user.scss';
-@import 'typeface.scss';
+@import "variables.scss";
+@import "navbar.scss";
+@import "masthead.scss";
+@import "buttons.scss";
+@import "projects.scss";
+@import "contact.scss";
+@import "user.scss";
+@import "typeface.scss";
 
 body {
-  font-family: 'JetBrains Mono';
-  letter-spacing: 0.0625em;
+    font-family: "JetBrains Mono";
+    letter-spacing: 0.0625em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'JetBrains Mono';
-  text-transform: uppercase!important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "JetBrains Mono";
+    text-transform: uppercase !important;
 }
 
 a {
-  font-weight: unset !important;
-  color: $primary;
-  &:focus,
-  &:hover {
-    text-decoration: none;
-    color: darken($primary, 20%);
-  }
+    font-weight: unset !important;
+    color: $primary;
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        color: darken($primary, 20%);
+    }
 }
 
 .bg-black {
-  background-color: $black !important;
+    background-color: $black !important;
 }
 
 .bg-primary {
-  background-color: $primary !important;
+    background-color: $primary !important;
 }
 
 .bg-vscode {
-  background-color: $vscode !important;
+    background-color: $vscode !important;
 }
 
 .text-primary {
-  color: $primary !important;
+    color: $primary !important;
 }
 
 footer {
-  padding: 5rem 0;
+    padding: 5rem 0;
 }
