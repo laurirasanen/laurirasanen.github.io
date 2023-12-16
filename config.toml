@@ -1,0 +1,32 @@
+base_url = "https://rasanen.dev"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+feed_filename = "rss.xml"
+title = "Lauri Räsänen"
+theme = "terminimal"
+taxonomies = [
+    {name = "tags"},
+]
+default_language = "en"
+
+[markdown]
+highlight_code = true
+
+[extra]
+# https://github.com/pawroman/zola-theme-terminimal
+accent_color = "red"
+background_color = "dark"
+logo_text = "Lauri Räsänen"
+copyright_html = "(half life scientist) everything.. seems to be in order"
+menu_items = [
+    {name = "blog", url = "$BASE_URL"},
+    {name = "tags", url = "$BASE_URL/tags"},
+    {name = "rss", url = "$BASE_URL/rss.xml", newtab = true},
+    {name = "projects", url = "$BASE_URL/projects"},
+    {name = "photos", url = "$BASE_URL/photos"},
+    {name = "github", url = "https://github.com/laurirasanen", newtab = true},
+    {name = "fedi", url = "https://idtech.space/users/rasanen", rel = "me", newtab = true},
+]
+post_view_navigation_prompt = "More posts"
+favicon = "/favicon.ico"
