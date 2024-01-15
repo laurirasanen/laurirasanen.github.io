@@ -7,6 +7,11 @@ path = "projects"
 
 In progress realtime renderer for learning, made with Rust and wgpu.
 
+- PBR
+- Shadow mapping & PCF
+- Volumetric fog
+- Runs on WASM and native desktop
+
 Source: [https://github.com/laurirasanen/wgpu-renderer](https://github.com/laurirasanen/wgpu-renderer)  
 Demo: [https://rasanen.dev/wgpu-renderer/](https://rasanen.dev/wgpu-renderer/)  
 (Note: Demo may take a while to load -- 50MB Sponza scene embedded in WASM.)  
@@ -16,7 +21,23 @@ Demo: [https://rasanen.dev/wgpu-renderer/](https://rasanen.dev/wgpu-renderer/)
 - Mouse - Look around
 - Scrollwheel - Increase/Decrease movement speed
 
-{{ video(src="/projects/wgpu-renderer/2023-11-10.mp4", type="video/mp4", loop="true", autoplay="true", caption="wgpu-renderer, Sponza") }}
+{{ video(src="/projects/wgpu-renderer/2023-11-10.mp4", type="video/mp4", loop="true", autoplay="true", caption="wgpu-renderer - Sponza") }}
+
+<br/>
+
+- - -
+
+## UE5 FPS experiments
+
+Experimenting with UE5 FPS mechanics in C++.
+
+Gun model is third-party but has no animations. All animations, handling, movement, etc. are implemented in C++ code.
+
+Post-process material for glitch-effect that responds to player input.
+
+{{ video(src="https://files.rasanen.dev/vid/ue5_glitch_fps.mp4", type="video/mp4", caption="UE5 FPS - Gun handling and post-process effects") }}
+
+{{ video(src="https://files.rasanen.dev/vid/ue5_lean_fps.mp4", type="video/mp4", caption="UE5 FPS - Gun handling and leaning around obstacles") }}
 
 <br/>
 
@@ -24,7 +45,7 @@ Demo: [https://rasanen.dev/wgpu-renderer/](https://rasanen.dev/wgpu-renderer/)
 
 ## blobby
 
-SDF rendering experiment.
+SDF rendering experiment. C++, bgfx.
 
 Source: [https://github.com/laurirasanen/blobby](https://github.com/laurirasanen/blobby)
 
