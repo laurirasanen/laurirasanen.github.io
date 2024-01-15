@@ -236,6 +236,14 @@ Source: [https://github.com/laurirasanen/shaderapivulkan](https://github.com/lau
 
 - - -
 
+## Unity 5.2 - 2D line of sight shader
+
+Unity shader experiment from 2016.
+
+{{ video(src="https://files.rasanen.dev/vid/unity_los.mp4", type="video/mp4", caption="Unity 5.2 - LOS shader") }}
+
+- - -
+
 ## Hammer maps
 
 ### jump_2d
