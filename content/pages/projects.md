@@ -43,13 +43,56 @@ Post-process material for glitch-effect that responds to player input.
 
 - - -
 
-## blobby
+## Rootbrew
 
-SDF rendering experiment. C++, bgfx.
+A game made in less than 48 hours for Finnish Game Jam 2023. C#, Unity.
 
-Source: [https://github.com/laurirasanen/blobby](https://github.com/laurirasanen/blobby)
+> Brewed in the toxic cauldron of a witch, you are a magical root spreading all across the land. You have been sent forth by your creator to slay all humans of the nearby village.
 
-{{ youtube(id="iAyRDgh6Sdw", caption="YouTube - signed distance fields") }}
+Source: [https://github.com/laurirasanen/fgj23](https://github.com/laurirasanen/fgj23)  
+GGJ: [https://globalgamejam.org/2023/games/rootbrew-8](https://globalgamejam.org/2023/games/rootbrew-8)  
+
+Team:
+- Piia Kemppainen - Art
+  - https://www.artstation.com/piiakemppainen
+- Lauri Räsänen - Code, Audio
+  - https://rasanen.dev
+- Janne Viitala - Art
+  - https://www.artstation.com/rarrix
+
+{{ video(src="https://files.rasanen.dev/vid/rootbrew.mp4", type="video/mp4", caption="Rootbrew - gameplay") }}
+
+- - -
+
+## BridgeSource2Plugin
+
+Plugin for exporting assets from Quixel Bridge to Source 2. C#.
+
+- Exporting geometry & textures
+- Automatic VMAT and VMDL creation
+- Automatic compiling of exported assets with resourcecompiler.exe
+- Automatic VMDL LOD setup from all exported LODs
+- Automatic .spray -prefab creation from assets with multiple variations
+- Option to specify shaders to use in materials
+- Option to change export scale of 3d assets
+
+Source: [https://github.com/laurirasanen/BridgeSource2Plugin](https://github.com/laurirasanen/BridgeSource2Plugin)
+
+{{ video(src="https://files.rasanen.dev/vid/bridge2.mp4", type="video/mp4", caption="BridgeSource2Plugin - Asset Sprayer demo") }}
+
+{{ video(src="https://files.rasanen.dev/vid/bridge.mp4", type="video/mp4", caption="BridgeSource2Plugin - Model exporter demo") }}
+
+<br/>
+
+- - -
+
+## Shovel
+
+A heightmap to displacement exporter for Source 2 Hammer editor. C#.
+
+Source: [https://github.com/laurirasanen/Shovel](https://github.com/laurirasanen/Shovel)
+
+{{ video(src="https://files.rasanen.dev/vid/shovel.mp4", type="video/mp4", caption="Shovel - World Creator heightmap to Source 2 Hammer") }}
 
 <br/>
 
@@ -80,9 +123,21 @@ Source: [https://github.com/laurirasanen/my_game](https://github.com/laurirasane
 
 - - -
 
+## blobby
+
+SDF rendering experiment. C++, bgfx.
+
+Source: [https://github.com/laurirasanen/blobby](https://github.com/laurirasanen/blobby)
+
+{{ video(src="https://files.rasanen.dev/vid/blobby.mp4", type="video/mp4", caption="signed distance fields") }}
+
+<br/>
+
+- - -
+
 ## hl-renderer
 
-A modified OpenGL renderer for [Xash3D FWGS](https://github.com/FWGS/xash3d-fwgs) (Half-Life) for testing post-processing effects.
+A modified renderer for [Xash3D FWGS](https://github.com/FWGS/xash3d-fwgs) (Half-Life) for testing post-processing effects. C, OpenGL.
 
 Source: [https://github.com/laurirasanen/hl-renderer](https://github.com/laurirasanen/hl-renderer)
 
@@ -96,46 +151,9 @@ Source: [https://github.com/laurirasanen/hl-renderer](https://github.com/laurira
 
 - - -
 
-## Rootbrew
-
-A game made in less than 48 hours for Finnish Game Jam 2023.
-
-> Brewed in the toxic cauldron of a witch, you are a magical root spreading all across the land. You have been sent forth by your creator to slay all humans of the nearby village.
-
-Source: [https://github.com/laurirasanen/fgj23](https://github.com/laurirasanen/fgj23)  
-GGJ: [https://globalgamejam.org/2023/games/rootbrew-8](https://globalgamejam.org/2023/games/rootbrew-8)  
-
-Team:  
-- Piia Kemppainen - Art
-  - https://www.artstation.com/piiakemppainen
-- Lauri Räsänen - Code, Audio
-  - https://rasanen.dev
-- Janne Viitala - Art
-  - https://www.artstation.com/rarrix
-
-{{ youtube(id="cfZFR6GUBFE", caption="YouTube - Rootbrew - FGJ 23") }}
-
-- - -
-
-## Tempus Records
-
-Automated TF2 rocket/sticky jump speedrun recording & uploading to YouTube.
-
-- Game & API automation with Node.js
-- ffmpeg for compression & video effects
-
-Source: [https://github.com/laurirasanen/TempusRecords](https://github.com/laurirasanen/TempusRecords)  
-YouTube: [https://www.youtube.com/tempusrecords](https://www.youtube.com/tempusrecords)
-
-{{ youtube(id="PM6uYDGFhQ0", caption="YouTube -   Rellort on jump_eons_b2 - 01:35.189 ") }}
-
-<br/>
-
-- - -
-
 ## qlsb
 
-A Quake Live strafe bot for solving defrag maps (PQL).
+A Quake Live strafe bot for solving defrag maps (PQL/Turbo). C, Python.
 
 - Updated version of [minqlx](https://github.com/MinoMino/minqlx) for C and Python API
 - Reversing Linux server and game binaries with IDA and Quake 3 arena source
@@ -146,11 +164,39 @@ A Quake Live strafe bot for solving defrag maps (PQL).
 
 Source: [https://github.com/laurirasanen/qlsb](https://github.com/laurirasanen/qlsb)
 
-{{ youtube(id="BCZFRFS3bHI", caption="YouTube - Quake Live strafebot - stonestrafe2 (PQL/Turbo)") }}
+{{ video(src="https://files.rasanen.dev/vid/qlsb2.mp4", type="video/mp4", caption="Quake Live defrag strafebot - stonestrafe2 (PQL/Turbo)") }}
 
-{{ youtube(id="oFqR2MmCUho", caption="YouTube - WIP Quake Live defrag strafebot (PQL)") }}
+{{ video(src="https://files.rasanen.dev/vid/qlsb.mp4", type="video/mp4", caption="Quake Live defrag strafebot - dfwc2017-6 (PQL/Turbo)") }}
 
-{{ video(src="/projects/qlsb/solver.mp4", type="video/mp4", caption="Solver in action") }}
+<br/>
+
+- - -
+
+## GA-input
+
+A genetic algorithm implemented in SourceMod that generates input sequences for playing TF2 surf maps.
+
+Source: [https://github.com/laurirasanen/GA-input](https://github.com/laurirasanen/GA-input)
+
+{{ video(src="https://files.rasanen.dev/vid/genetic.mp4", type="video/mp4", caption="Genetic algorithm plays surf_beginner stages 1-4") }}
+
+{{ video(src="https://files.rasanen.dev/vid/genetic2.mp4", type="video/mp4", caption="Genetic algorithm plays jump_haze segmented") }}
+
+<br/>
+
+- - -
+
+## Tempus Records
+
+Automated TF2 rocket/sticky jump speedrun recording & uploading to YouTube. JavaScript, Node.js.
+
+- Game & API automation with Node.js
+- ffmpeg for compression & video effects
+
+Source: [https://github.com/laurirasanen/TempusRecords](https://github.com/laurirasanen/TempusRecords)  
+YouTube: [https://www.youtube.com/tempusrecords](https://www.youtube.com/tempusrecords)
+
+{{ video(src="https://files.rasanen.dev/vid/tempusrecords.mp4", type="video/mp4", caption="TempusRecords - newjuls on jump_keep_final - 01:17.699") }}
 
 <br/>
 
@@ -158,7 +204,7 @@ Source: [https://github.com/laurirasanen/qlsb](https://github.com/laurirasanen/q
 
 ## domc
 
-In progress moba gamemode for TF2.  
+In progress moba gamemode for TF2. Vscript.
 
 - Robots as creeps
 - Sentries as towers
@@ -174,6 +220,22 @@ Source: [https://github.com/laurirasanen/domc](https://github.com/laurirasanen/d
 
 - - -
 
+## shaderapivulkan
+
+An incomplete [shaderapi](https://developer.valvesoftware.com/wiki/Source_SDK_2013:_Your_First_Shader#Architecture) project aimed at adding Vulkan support to the Source 1 engine. C++.
+
+- Wireframe only, no other shaders, textures, etc.
+
+Source: [https://github.com/laurirasanen/shaderapivulkan](https://github.com/laurirasanen/shaderapivulkan)
+
+{{ figure(src="/projects/shaderapivulkan/hammer.png", caption="Hammer editor running on Vulkan") }}
+
+{{ figure(src="/projects/shaderapivulkan/hammer2.png", caption="Hammer editor running on Vulkan") }}
+
+<br/>
+
+- - -
+
 ## Hammer maps
 
 ### jump_2d
@@ -184,7 +246,7 @@ Source: [https://github.com/laurirasanen/domc](https://github.com/laurirasanen/d
 - [jump.tf - Jump Jam 2023](https://jump.tf/forum/index.php?topic=3475.0)
 - Source: [https://github.com/laurirasanen/tf-maps](https://github.com/laurirasanen/tf-maps)
 
-{{ youtube(id="FLJOl4H1Lb0", caption="YouTube - jump_2d showcase") }}
+{{ video(src="https://files.rasanen.dev/vid/jump_2d.mp4", type="video/mp4", caption="jump_2d showcase") }}
 
 ### jump_wallrun
 
@@ -192,7 +254,7 @@ Source: [https://github.com/laurirasanen/domc](https://github.com/laurirasanen/d
 - Custom [VScript](https://developer.valvesoftware.com/wiki/VScript) for combining rocketjump with Titanfall-style wallruns
 - Source: [https://github.com/laurirasanen/tf-maps](https://github.com/laurirasanen/tf-maps)
 
-{{ youtube(id="SiLQ82XqmCs", caption="YouTube - jump_wallrun_b1 showcase") }}
+{{ video(src="https://files.rasanen.dev/vid/jump_wallrun.mp4", type="video/mp4", caption="jump_wallrun_b1 showcase") }}
 
 ### box13
 
@@ -251,57 +313,9 @@ Prompt:
 
 - - -
 
-## BridgeSource2Plugin
-
-Plugin for exporting assets from Quixel Bridge to Source 2.
-
-- Exporting geometry & textures
-- Automatic VMAT and VMDL creation
-- Automatic compiling of exported assets with resourcecompiler.exe
-- Automatic VMDL LOD setup from all exported LODs
-- Automatic .spray -prefab creation from assets with multiple variations
-- Option to specify shaders to use in materials
-- Option to change export scale of 3d assets
-
-Source: [https://github.com/laurirasanen/BridgeSource2Plugin](https://github.com/laurirasanen/BridgeSource2Plugin)
-
-{{ youtube(id="mxbicmO3Kug", caption="YouTube - Quixel Bridge Source 2 Importer (HL Alyx)") }}
-
-{{ youtube(id="_U26K0bTlmc", caption="YouTube - BridgeSource2Plugin update & Asset Sprayer demo") }}
-
-<br/>
-
-- - -
-
-## Shovel
-
-A heightmap to displacement importer for Source 2 Hammer editor.
-
-{{ youtube(id="e6_VJDo9YaA", caption="YouTube - Shovel demo - World Creator heightmap to Source 2 Hammer") }}
-
-<br/>
-
-- - -
-
-## shaderapivulkan
-
-An incomplete [shaderapi](https://developer.valvesoftware.com/wiki/Source_SDK_2013:_Your_First_Shader#Architecture) project aimed at adding Vulkan support to the Source 1 engine.
-
-- Wireframe only, no other shaders, textures, etc.
-
-Source: [https://github.com/laurirasanen/shaderapivulkan](https://github.com/laurirasanen/shaderapivulkan)
-
-{{ figure(src="/projects/shaderapivulkan/hammer.png", caption="Hammer editor running on Vulkan") }}
-
-{{ figure(src="/projects/shaderapivulkan/hammer2.png", caption="Hammer editor running on Vulkan") }}
-
-<br/>
-
-- - -
-
 ## Goliath
 
-A very dumb Rocket League reinforcement learning bot trained with rlgym.
+A very dumb Rocket League reinforcement learning bot trained with rlgym. Python.
 
 Source: [https://github.com/laurirasanen/goliath](https://github.com/laurirasanen/goliath)
 
@@ -320,21 +334,6 @@ A barebones C# modding api for Noita.
 - Byte pattern scanning
 
 Source: [https://github.com/laurirasanen/NoitaMod](https://github.com/laurirasanen/NoitaMod)
-
-<br/>
-
-- - -
-
-## GA-input
-
-A genetic algorithm implemented in SourceMod that generates input sequences for playing TF2 surf maps.
-
-Source: [https://github.com/laurirasanen/GA-input](https://github.com/laurirasanen/GA-input)
-
-{{ youtube(id="RzLEOIzrDYI", caption="YouTube - Genetic algorithm plays surf_beginner stages 1-4") }}
-
-{{ youtube(id="qT_yc9nsJBk", caption="YouTube - Genetic algorithm plays jump_haze segmented") }}
-
 
 <br/>
 
