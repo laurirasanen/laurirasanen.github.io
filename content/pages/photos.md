@@ -45,7 +45,7 @@ Photos I've taken. Click to open in a new tab.
 <br>
 {{ image(src="https://files.rasanen.dev/img/IMG_6341.jpg") }}
 <br>
-{{ image(src="https://files.rasanen.dev/img/IMG_6337.jpg") }}
+{{ image(src="https://files.rasanen.dev/img/IMG_6337_crop.jpg") }}
 <br>
 {{ image(src="https://files.rasanen.dev/img/IMG_6333.jpg") }}
 <br>
