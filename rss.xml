@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Lauri Räsänen</title>
+      <link>https://rasanen.dev</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://rasanen.dev/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 12 Mar 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Updating Alienware AW3423DWF firmware on Linux using a Windows 10 VM inside VirtualBox</title>
+          <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://rasanen.dev/aw3423dwf-firmware-linux/</link>
+          <guid>https://rasanen.dev/aw3423dwf-firmware-linux/</guid>
+          <description>&lt;p&gt;Alienware AW3423DWF support page only comes with a Windows executable for updating the monitor firmware. It does not seem to work with Wine currently, but it can be run using a Windows 10 VM inside VirtualBox.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Conway&#x27;s Game of Life in ffmpeg</title>
+          <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://rasanen.dev/ffmpeg-life/</link>
+          <guid>https://rasanen.dev/ffmpeg-life/</guid>
+          <description>&lt;p&gt;&lt;strong&gt;Edit (2022-11-06): I found out after writing this that there is a built in &lt;a href=&quot;https:&#x2F;&#x2F;ffmpeg.org&#x2F;ffmpeg-filters.html#life&quot;&gt;life&lt;&#x2F;a&gt; filter, but that&#x27;s no fun.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been sitting on the idea of using ffmpeg filters for game of life for a couple years now. Today I was bored enough to give it a go.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Night Light as redshift oneshot replacement under Gnome in Ubuntu 22.04</title>
+          <pubDate>Sat, 06 Aug 2022 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://rasanen.dev/wayland-redshift/</link>
+          <guid>https://rasanen.dev/wayland-redshift/</guid>
+          <description>&lt;p&gt;&lt;code&gt;redshift -O [VALUE]&lt;&#x2F;code&gt; has been an eye-saver for me on Ubuntu 20.04. Unfortunately it no longer works on a fresh Ubuntu 22.04 install.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
