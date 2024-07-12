@@ -1,8 +1,8 @@
 base_url = "https://rasanen.dev"
 compile_sass = true
 build_search_index = true
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 title = "Lauri Räsänen"
 theme = "terminimal"
 taxonomies = [
