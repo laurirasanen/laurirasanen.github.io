@@ -9,6 +9,21 @@ Photos I've taken. Click to open in a new tab.
 
 - - -
 
+## 2024
+
+{{ image(src="https://files.rasanen.dev/img/IMG_6430.jpg") }}
+<br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6424.jpg") }}
+<br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6420.jpg") }}
+<br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6419.jpg") }}
+<br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6409.jpg") }}
+<br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6405.jpg") }}
+<br>
+
 ## 2023
 
 {{ image(src="https://files.rasanen.dev/img/IMG_6388.jpg") }}
