@@ -13,6 +13,8 @@ Photos I've taken. Click to open in a new tab.
 
 {{ image(src="https://files.rasanen.dev/img/IMG_6430.jpg") }}
 <br>
+{{ image(src="https://files.rasanen.dev/img/IMG_6427.jpg") }}
+<br>
 {{ image(src="https://files.rasanen.dev/img/IMG_6424.jpg") }}
 <br>
 {{ image(src="https://files.rasanen.dev/img/IMG_6420.jpg") }}
