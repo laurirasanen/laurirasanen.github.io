@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lauri Räsänen</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://rasanen.dev/style.css">
+    <link rel="stylesheet" href="https://rasanen.dev/color/red.css">
+
+        <link rel="stylesheet" href="https://rasanen.dev/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://rasanen.dev/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image&#x2F;x-icon" href="/favicon.ico">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://rasanen.dev" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Lauri Räsänen
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://rasanen.dev" rel="">blog</a></li>
+            
+                <li><a href="https://rasanen.dev/tags" rel="">tags</a></li>
+            
+                <li><a href="https://rasanen.dev/rss.xml" target="_blank" rel="noopener noreferrer ">rss</a></li>
+            
+                <li><a href="https://rasanen.dev/projects" rel="">projects</a></li>
+            
+                <li><a href="https://rasanen.dev/photos" rel="">photos</a></li>
+            
+                <li><a href="https://github.com/laurirasanen" target="_blank" rel="noopener noreferrer ">github</a></li>
+            
+                <li><a href="https://idtech.space/users/rasanen" target="_blank" rel="noopener noreferrer me">fedi</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://rasanen.dev/wayland-redshift/">Night Light as redshift oneshot replacement under Gnome in Ubuntu 22.04</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-08-06
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/gnome/">#gnome</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/night-light/">#night light</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/redshift/">#redshift</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/ubuntu/">#ubuntu</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/wayland/">#wayland</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/bash/">#bash</a></span>
+    
+
+        
+        <div class="post-content">
+            <p><code>redshift -O [VALUE]</code> has been an eye-saver for me on Ubuntu 20.04. Unfortunately it no longer works on a fresh Ubuntu 22.04 install.</p>
+<span id="continue-reading"></span>
+<p>Gnome comes with a Night Light feature out of the box, but I'm not a huge fan of automatic or time-based temperature adjustment. My sleep schedule and eye-soreness levels vary a fair amount so I prefer manual control (plus it's nice when switching between tasks that require different temps).</p>
+<p>The Gnome settings UI is not ideal as it takes 3-4 clicks to open, only lets you adjust the temperature in range 1700-4700, and doesn't show the actual values.</p>
+
+  <figure class="center" >
+    <img src="/2022-08-06-wayland-redshift/night-light.png" loading="lazy" />
+    
+      <figcaption class="center">Night Light in Gnome</figcaption>
+    
+  </figure>
+
+<p>You can, however, create a bash alias that controls the built in Night Light via <code>gsettings</code> to replace <code>redshift</code>'s oneshot feature:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># place in ~/.bash_aliases and &#39;source&#39; the file
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">red_shift</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">gsettings</span><span> set org.gnome.settings-daemon.plugins.color night-light-enabled true
+</span><span>	</span><span style="color:#bf616a;">gsettings</span><span> set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false
+</span><span>	</span><span style="color:#bf616a;">gsettings</span><span> set org.gnome.settings-daemon.plugins.color night-light-schedule-from 0.0
+</span><span>	</span><span style="color:#bf616a;">gsettings</span><span> set org.gnome.settings-daemon.plugins.color night-light-schedule-to 0.0
+</span><span>	</span><span style="color:#bf616a;">gsettings</span><span> set org.gnome.settings-daemon.plugins.color night-light-temperature $</span><span style="color:#bf616a;">1
+</span><span>}
+</span><span style="color:#96b5b4;">alias </span><span style="color:#8fa1b3;">rs</span><span>=</span><span style="color:#a3be8c;">red_shift
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># usage: rs [VALUE] (6500 = default)
+</span><span style="color:#bf616a;">rs</span><span> 2000
+</span></code></pre>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">More posts</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                
+                    <span class="button next">
+                        <a href="https://rasanen.dev/ffmpeg-life/">
+                            <span class="button__text">Conway&#x27;s Game of Life in ffmpeg</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">(half life scientist) everything.. seems to be in order</div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
