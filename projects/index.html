@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lauri Räsänen</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://rasanen.dev/style.css">
+    <link rel="stylesheet" href="https://rasanen.dev/color/red.css">
+
+        <link rel="stylesheet" href="https://rasanen.dev/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://rasanen.dev/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image&#x2F;x-icon" href="/favicon.ico">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://rasanen.dev" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Lauri Räsänen
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        <nav class="menu">
+            <ul class="menu__inner">
+                <li><a href="https://rasanen.dev" rel="">blog</a></li>
+            
+                <li><a href="https://rasanen.dev/tags" rel="">tags</a></li>
+            
+                <li><a href="https://rasanen.dev/rss.xml" target="_blank" rel="noopener noreferrer ">rss</a></li>
+            
+                <li class="active"><a href="https://rasanen.dev/projects" rel="">projects</a></li>
+            
+                <li><a href="https://rasanen.dev/photos" rel="">photos</a></li>
+            
+                <li><a href="https://github.com/laurirasanen" target="_blank" rel="noopener noreferrer ">github</a></li>
+            
+                <li><a href="https://idtech.space/users/rasanen" target="_blank" rel="noopener noreferrer me">fedi</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://rasanen.dev/projects/">projects</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date"></span>
+
+    </div>
+
+    
+
+        
+        <div class="post-content">
+            <h1 id="halflife-photomode">halflife-photomode</h1>
+<p>A basic photo mode for Half-Life. </p>
+<p>Source: <a href="https://github.com/laurirasanen/halflife-photomode">https://github.com/laurirasanen/halflife-photomode</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/photomode_compressed.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Half-Life photomode</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="wgpu-renderer">wgpu-renderer</h2>
+<p>Realtime renderer for learning, Rust, wgpu.</p>
+<ul>
+<li>PBR</li>
+<li>Shadow mapping</li>
+<li>Volumetric fog</li>
+<li>Runs on WASM and native desktop</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/wgpu-renderer">https://github.com/laurirasanen/wgpu-renderer</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls  loop   autoplay   preload="metadata" loading="lazy">
+      <source src="/projects/wgpu-renderer/2023-11-10.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">wgpu-renderer - Sponza</figcaption>
+    
+  </figure>
+
+<p>Demo: <a href="https://rasanen.dev/wgpu-renderer/">https://rasanen.dev/wgpu-renderer/</a><br />
+(<strong>Note: shadowmaps and volumetric fog are not enabled on WebGL.</strong>)<br />
+(<strong>Note: Demo may take a while to load -- 50MB Sponza scene embedded in WASM.</strong>)</p>
+<ul>
+<li>WASD - Move horizontally</li>
+<li>Ctrl/Space - Move vertically</li>
+<li>Mouse - Look around</li>
+<li>Scrollwheel - Increase/Decrease movement speed</li>
+</ul>
+<br/>
+<hr />
+<h2 id="drive">drive</h2>
+<p>Procedular terrain experiment. C++, Vulkan.</p>
+<p>Source: <a href="https://github.com/laurirasanen/drive">https://github.com/laurirasanen/drive</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/drive.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">procedular terrain &amp; sky</figcaption>
+    
+  </figure>
+
+<hr />
+<h2 id="blobby">blobby</h2>
+<p>SDF rendering experiment. C++, bgfx.</p>
+<p>Source: <a href="https://github.com/laurirasanen/blobby">https://github.com/laurirasanen/blobby</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/blobby.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">signed distance fields</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="cave">cave</h2>
+<p>Procedular cubemarched cave experiment. Rust, Bevy.</p>
+<p>Source: <a href="https://github.com/laurirasanen/cave">https://github.com/laurirasanen/cave</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/cave_low.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">procedular cave</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="rootbrew">Rootbrew</h2>
+<p>A game made in less than 48 hours for Finnish Game Jam 2023. C#, Unity.</p>
+<blockquote>
+<p>Brewed in the toxic cauldron of a witch, you are a magical root spreading all across the land. You have been sent forth by your creator to slay all humans of the nearby village.</p>
+</blockquote>
+<p>Source: <a href="https://github.com/laurirasanen/fgj23">https://github.com/laurirasanen/fgj23</a><br />
+GGJ: <a href="https://globalgamejam.org/2023/games/rootbrew-8">https://globalgamejam.org/2023/games/rootbrew-8</a></p>
+<p>Team:</p>
+<ul>
+<li>Piia Kemppainen - Art
+<ul>
+<li>https://www.artstation.com/piiakemppainen</li>
+</ul>
+</li>
+<li>Lauri Räsänen - Code, Audio
+<ul>
+<li>https://rasanen.dev</li>
+</ul>
+</li>
+<li>Janne Viitala - Art
+<ul>
+<li>https://www.artstation.com/rarrix</li>
+</ul>
+</li>
+</ul>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/rootbrew.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Rootbrew - gameplay</figcaption>
+    
+  </figure>
+
+<hr />
+<h2 id="hl-renderer">hl-renderer</h2>
+<p>A modified renderer for <a href="https://github.com/FWGS/xash3d-fwgs">Xash3D FWGS</a> (Half-Life) for testing post-processing effects. C, OpenGL.</p>
+<p>Source: <a href="https://github.com/laurirasanen/hl-renderer">https://github.com/laurirasanen/hl-renderer</a></p>
+
+  <figure class="center" >
+    <img src="/projects/hl-renderer/cg.png" loading="lazy" />
+    
+      <figcaption class="center">Color grading</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <img src="/projects/hl-renderer/vignette.png" loading="lazy" />
+    
+      <figcaption class="center">Vignette</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <img src="/projects/hl-renderer/chromatic_aberration.png" loading="lazy" />
+    
+      <figcaption class="center">Chromatic aberration</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="my-game">my_game</h2>
+<p>Retro FPS toy project. C, OpenGL.</p>
+<ul>
+<li>BSP rendering, lighting, collisions</li>
+<li>MD3 models</li>
+<li>Console, commands, cvars</li>
+<li>Model viewer tool</li>
+<li>Basic AI</li>
+<li>Quake style movement</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/my_game">https://github.com/laurirasanen/my_game</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="/projects/my_game/my_game_cube.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Basic AI</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <img src="/projects/my_game/game_2022-01-05.png" loading="lazy" />
+    
+      <figcaption class="center">Models in game, testing with Q3 assets</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <img src="/projects/my_game/console_2022-04-18.png" loading="lazy" />
+    
+      <figcaption class="center">Game console</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <img src="/projects/my_game/modelviewer_2022-03-11.png" loading="lazy" />
+    
+      <figcaption class="center">Model viewer</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="defence-of-mann-co">Defence of Mann. Co</h2>
+<p>Moba gamemode for TF2, VScript.</p>
+<ul>
+<li>Robots as creeps</li>
+<li>Sentries as towers</li>
+<li>Leveling, custom damage, health, etc. for player classes</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/domc">https://github.com/laurirasanen/domc</a></p>
+<p>Steam Workshop: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3308664636">https://steamcommunity.com/sharedfiles/filedetails/?id=3308664636</a></p>
+
+  <a href="https://files.rasanen.dev/img/domc_trainyard_b7.png" target="_blank" rel="noopener noreferrer">
+    <img src="https://files.rasanen.dev/img/domc_trainyard_b7.png" class="center" loading="lazy" />
+  </a>
+
+<br/>
+<hr />
+<h2 id="qlsb">qlsb</h2>
+<p>A Quake Live strafe bot for solving defrag maps (PQL/Turbo). C, Python.</p>
+<ul>
+<li>Updated version of <a href="https://github.com/MinoMino/minqlx">minqlx</a> for C and Python API</li>
+<li>Reversing Linux server and game binaries with IDA and Quake 3 arena source</li>
+<li>User defined path through level for fitness</li>
+<li>Strafe algorithm for (mostly) optimal speed gain</li>
+<li>Simple brute force solver with short lookahead for now, maybe something smarter later</li>
+<li>Likes to put itself in unrecoverable positions</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/qlsb">https://github.com/laurirasanen/qlsb</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/qlsb2.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Quake Live defrag strafebot - stonestrafe2 (PQL&#x2F;Turbo)</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/qlsb.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Quake Live defrag strafebot - dfwc2017-6 (PQL&#x2F;Turbo)</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="ga-input">GA-input</h2>
+<p>A genetic algorithm implemented in SourceMod that generates input sequences for playing TF2 surf maps.</p>
+<p>Source: <a href="https://github.com/laurirasanen/GA-input">https://github.com/laurirasanen/GA-input</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/genetic.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Genetic algorithm plays surf_beginner stages 1-4</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/genetic2.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Genetic algorithm plays jump_haze segmented</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="shovel">Shovel</h2>
+<p>A heightmap to displacement exporter for Source 2 Hammer editor. C#.</p>
+<p>Source: <a href="https://github.com/laurirasanen/Shovel">https://github.com/laurirasanen/Shovel</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/shovel.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Shovel - World Creator heightmap to Source 2 Hammer</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="bridgesource2plugin">BridgeSource2Plugin</h2>
+<p>Plugin for exporting assets from Quixel Bridge to Source 2. C#.</p>
+<ul>
+<li>Exporting geometry &amp; textures</li>
+<li>Automatic VMAT and VMDL creation</li>
+<li>Automatic compiling of exported assets with resourcecompiler.exe</li>
+<li>Automatic VMDL LOD setup from all exported LODs</li>
+<li>Automatic .spray -prefab creation from assets with multiple variations</li>
+<li>Option to specify shaders to use in materials</li>
+<li>Option to change export scale of 3d assets</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/BridgeSource2Plugin">https://github.com/laurirasanen/BridgeSource2Plugin</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/bridge2.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">BridgeSource2Plugin - Asset Sprayer demo</figcaption>
+    
+  </figure>
+
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/bridge.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">BridgeSource2Plugin - Model exporter demo</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="tempus-records">Tempus Records</h2>
+<p>Automated TF2 rocket/sticky jump speedrun recording &amp; uploading to YouTube. JavaScript, Node.js.</p>
+<ul>
+<li>Game &amp; API automation with Node.js</li>
+<li>ffmpeg for compression &amp; video effects</li>
+</ul>
+<p>Source: <a href="https://github.com/laurirasanen/TempusRecords">https://github.com/laurirasanen/TempusRecords</a><br />
+YouTube: <a href="https://www.youtube.com/tempusrecords">https://www.youtube.com/tempusrecords</a></p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/tempusrecords.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">TempusRecords - newjuls on jump_keep_final - 01:17.699</figcaption>
+    
+  </figure>
+
+<br/>
+<hr />
+<h2 id="unity-5-2-2d-line-of-sight-shader">Unity 5.2 - 2D line of sight shader</h2>
+<p>Unity shader experiment from 2016.</p>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/unity_los.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Unity 5.2 - LOS shader</figcaption>
+    
+  </figure>
+
+<hr />
+<h2 id="hammer-maps">Hammer maps</h2>
+<h3 id="jump-2d">jump_2d</h3>
+<ul>
+<li>2023-06</li>
+<li>An entry for 2023 Jump Jam</li>
+<li>Custom <a href="https://developer.valvesoftware.com/wiki/VScript">VScript</a> for turning TF2 into a rocketjump sidescroller</li>
+<li><a href="https://jump.tf/forum/index.php?topic=3475.0">jump.tf - Jump Jam 2023</a></li>
+<li>Source: <a href="https://github.com/laurirasanen/tf-maps">https://github.com/laurirasanen/tf-maps</a></li>
+</ul>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/jump_2d.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">jump_2d showcase</figcaption>
+    
+  </figure>
+
+<h3 id="jump-wallrun">jump_wallrun</h3>
+<ul>
+<li>2023-04</li>
+<li>Custom <a href="https://developer.valvesoftware.com/wiki/VScript">VScript</a> for combining rocketjump with Titanfall-style wallruns</li>
+<li>Source: <a href="https://github.com/laurirasanen/tf-maps">https://github.com/laurirasanen/tf-maps</a></li>
+</ul>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="https://files.rasanen.dev/vid/jump_wallrun.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">jump_wallrun_b1 showcase</figcaption>
+    
+  </figure>
+
+<h3 id="box13">box13</h3>
+<ul>
+<li>2020-04</li>
+<li>Part of TF2 rocketjump mapping collab during covid-19.</li>
+<li><a href="https://jump.tf/forum/index.php/topic,3050.msg25555.htm">jump.tf - Superior (soldier) COVID-19 Collab Map</a></li>
+<li><a href="https://jump.tf/forum/index.php/topic,3111.msg26122.html">jump.tf - jump_corona</a></li>
+<li>Source: <a href="https://github.com/laurirasanen/tf-maps">https://github.com/laurirasanen/tf-maps</a></li>
+</ul>
+<p>Prompt:</p>
+<blockquote>
+<p>i will send you a randomly sized and shaped room, and you have to put a jump in it. it won't be a boring hollow cube but something vaguely jump shaped. if you think you can fit more than one good jump in, go for it.</p>
+<p>you can put anything you want inside your box, but nothing can stick out and you can't change the box i give you. (if it's stuff like regen, nonade or disp edges it can stick out, just make sure your jump and detail is in the box) the box i give you seals the map. if you add map wide entities or a bunch of logic things, please put them all next to each other. you don't have to fill up the box entirely, block off a section if you want.</p>
+<p>the detail/theme is quarantine, but the interpretation is up to you. skybox is mpa115, light_env included in the zip.</p>
+</blockquote>
+
+  <a href="/projects/hammer/box13_001.jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/box13_001.jpeg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/box13_004.jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/box13_004.jpeg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/box13_006.jpeg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/box13_006.jpeg" class="center" loading="lazy" />
+  </a>
+
+<h3 id="house1">house1</h3>
+<ul>
+<li>2021-04</li>
+<li>WIP s&amp;box map, HL:A tools</li>
+<li>Source: <a href="https://github.com/laurirasanen/mapsrc">https://github.com/laurirasanen/mapsrc</a></li>
+</ul>
+
+  <a href="/projects/hammer/house1_001.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/house1_001.jpg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/house1_002.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/house1_002.jpg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/house1_003.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/house1_003.jpg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/house1_004.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/house1_004.jpg" class="center" loading="lazy" />
+  </a>
+
+
+  <a href="/projects/hammer/house1_005.jpg" target="_blank" rel="noopener noreferrer">
+    <img src="/projects/hammer/house1_005.jpg" class="center" loading="lazy" />
+  </a>
+
+<br/>
+<hr />
+
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">(half life scientist) everything.. seems to be in order</div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>

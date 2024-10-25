@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lauri Räsänen</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://rasanen.dev/style.css">
+    <link rel="stylesheet" href="https://rasanen.dev/color/red.css">
+
+        <link rel="stylesheet" href="https://rasanen.dev/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://rasanen.dev/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image&#x2F;x-icon" href="/favicon.ico">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://rasanen.dev" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Lauri Räsänen
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://rasanen.dev" rel="">blog</a></li>
+            
+                <li><a href="https://rasanen.dev/tags" rel="">tags</a></li>
+            
+                <li><a href="https://rasanen.dev/rss.xml" target="_blank" rel="noopener noreferrer ">rss</a></li>
+            
+                <li><a href="https://rasanen.dev/projects" rel="">projects</a></li>
+            
+                <li><a href="https://rasanen.dev/photos" rel="">photos</a></li>
+            
+                <li><a href="https://github.com/laurirasanen" target="_blank" rel="noopener noreferrer ">github</a></li>
+            
+                <li><a href="https://idtech.space/users/rasanen" target="_blank" rel="noopener noreferrer me">fedi</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://rasanen.dev/ffmpeg-life/">Conway&#x27;s Game of Life in ffmpeg</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-11-05
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/ffmpeg/">#ffmpeg</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/life/">#life</a>&nbsp;
+                <a class="post-tag" href="https://rasanen.dev/tags/bash/">#bash</a></span>
+    
+
+        
+        <div class="post-content">
+            <p><strong>Edit (2022-11-06): I found out after writing this that there is a built in <a href="https://ffmpeg.org/ffmpeg-filters.html#life">life</a> filter, but that's no fun.</strong></p>
+<p>I've been sitting on the idea of using ffmpeg filters for game of life for a couple years now. Today I was bored enough to give it a go.</p>
+<span id="continue-reading"></span>
+<p>The script could probably be improved to run a single ffmpeg command that directly combines all the frames in memory rather than creating a set of pngs...</p>
+<h2 id="example">Example</h2>
+
+  <figure class="center" >
+    <img src="/2022-11-05-ffmpeg-life/gosper.png" loading="lazy" />
+    
+      <figcaption class="center">Gosper glider gun initial frame</figcaption>
+    
+  </figure>
+
+<p>Creating a 200 frame video at 12 fps and 10x resolution from the gosper image: </p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">life.sh</span><span> gosper.png 200 12 10
+</span></code></pre>
+
+  <figure class="center" >
+    <video width="100%" height="auto" controls    preload="metadata" loading="lazy">
+      <source src="/2022-11-05-ffmpeg-life/life.mp4" type="video&#x2F;mp4">
+    </video>
+    
+      <figcaption class="center">Gosper glider gun in action</figcaption>
+    
+  </figure>
+
+<h2 id="source">Source</h2>
+<p>The up-to-date source can be found at <a href="https://github.com/laurirasanen/ffmpeg-life">https://github.com/laurirasanen/ffmpeg-life</a>, however here's the full script at the time of writing.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/bin/bash
+</span><span style="color:#65737e;">#
+</span><span style="color:#65737e;"># ---------------------------------------------------------
+</span><span style="color:#65737e;">#
+</span><span style="color:#65737e;"># script for Conway&#39;s Game of Life using ffmpeg filters
+</span><span style="color:#65737e;">#
+</span><span style="color:#65737e;"># usage: life.sh &lt;input_image&gt; &lt;num_frames&gt; &lt;fps&gt; &lt;scale&gt;
+</span><span style="color:#65737e;"># 
+</span><span style="color:#65737e;"># example: life.sh gosper.png 200 12 10
+</span><span style="color:#65737e;"># would produce a 200 frame video of life from gosper.png 
+</span><span style="color:#65737e;"># at 12 fps and 10x resolution of the original image.
+</span><span style="color:#65737e;">#
+</span><span style="color:#65737e;"># ---------------------------------------------------------
+</span><span style="color:#65737e;">#
+</span><span style="color:#65737e;"># Lauri Räsänen - 2022
+</span><span>
+</span><span>
+</span><span style="color:#96b5b4;">set </span><span style="color:#bf616a;">-e
+</span><span>
+</span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[ </span><span>&quot;$</span><span style="color:#bf616a;">#</span><span>&quot; </span><span style="color:#bf616a;">-ne</span><span> 4 </span><span style="color:#96b5b4;">]</span><span>; </span><span style="color:#b48ead;">then
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">invalid number of parameters</span><span>&quot;
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">usage: life.sh &lt;input_image&gt; &lt;num_frames&gt; &lt;fps&gt; &lt;scale&gt;</span><span>&quot;
+</span><span>    </span><span style="color:#96b5b4;">exit
+</span><span style="color:#b48ead;">fi
+</span><span>
+</span><span style="color:#bf616a;">INPUT</span><span>=$</span><span style="color:#bf616a;">1
+</span><span style="color:#bf616a;">FRAMES</span><span>=$</span><span style="color:#bf616a;">2
+</span><span style="color:#bf616a;">FPS</span><span>=$</span><span style="color:#bf616a;">3
+</span><span style="color:#bf616a;">SCALE</span><span>=$</span><span style="color:#bf616a;">4
+</span><span>
+</span><span style="color:#bf616a;">rm -rf</span><span> ./out
+</span><span style="color:#bf616a;">mkdir</span><span> out
+</span><span style="color:#bf616a;">cp </span><span>$</span><span style="color:#bf616a;">INPUT</span><span> out/frame-00000.png
+</span><span>
+</span><span style="color:#65737e;"># check if pixel (X, Y) is alive
+</span><span style="color:#8fa1b3;">is_alive </span><span>() {
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( r(X,Y), 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( g(X,Y), 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( b(X,Y), 0)</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">    </span><span>&quot;
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;"># check if pixel (X, Y) with offset ($1, $2) is alive.
+</span><span style="color:#65737e;"># if position is outside image bounds, it is considered dead.
+</span><span style="color:#8fa1b3;">is_alive_off </span><span>() {
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( r(X</span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">,Y</span><span>$</span><span style="color:#bf616a;">2</span><span style="color:#a3be8c;">), 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( g(X</span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">,Y</span><span>$</span><span style="color:#bf616a;">2</span><span style="color:#a3be8c;">), 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq( b(X</span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">,Y</span><span>$</span><span style="color:#bf616a;">2</span><span style="color:#a3be8c;">), 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        lt(X</span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">, W)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        gte(X</span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">, 0)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        lt(Y</span><span>$</span><span style="color:#bf616a;">2</span><span style="color:#a3be8c;">, H)*</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        gte(Y</span><span>$</span><span style="color:#bf616a;">2</span><span style="color:#a3be8c;">, 0)</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">    </span><span>&quot;
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;"># check if pixel (X, Y) has $1 neighbours
+</span><span style="color:#8fa1b3;">has_neighbours </span><span>() {
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        eq(</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#bf616a;">1</span><span style="color:#a3be8c;">,</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off -1 -1</span><span style="color:#a3be8c;">) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off -1</span><span style="color:#a3be8c;"> +0) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off -1</span><span style="color:#a3be8c;"> +1) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off</span><span style="color:#a3be8c;"> +0</span><span style="color:#bf616a;"> -1</span><span style="color:#a3be8c;">) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off</span><span style="color:#a3be8c;"> +0 +1) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off</span><span style="color:#a3be8c;"> +1</span><span style="color:#bf616a;"> -1</span><span style="color:#a3be8c;">) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off</span><span style="color:#a3be8c;"> +1 +0) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">            </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive_off</span><span style="color:#a3be8c;"> +1 +1)</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        )</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">    </span><span>&quot;
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;"># should the pixel (X, Y) be alive?
+</span><span style="color:#8fa1b3;">should_live </span><span>() {
+</span><span>    </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive</span><span style="color:#a3be8c;">)*</span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">has_neighbours</span><span style="color:#a3be8c;"> 2) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive</span><span style="color:#a3be8c;">)*</span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">has_neighbours</span><span style="color:#a3be8c;"> 3) +</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">        ifnot(</span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">is_alive</span><span style="color:#a3be8c;">), </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">has_neighbours</span><span style="color:#a3be8c;"> 3))
+</span><span style="color:#a3be8c;">    </span><span>&quot;
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;"># load image from $1,
+</span><span style="color:#65737e;"># step the game forward,
+</span><span style="color:#65737e;"># and save image to $2
+</span><span style="color:#8fa1b3;">step </span><span>() {
+</span><span>    </span><span style="color:#bf616a;">ffmpeg </span><span>\
+</span><span style="color:#bf616a;">        -i </span><span>$</span><span style="color:#bf616a;">1 </span><span>\
+</span><span style="color:#bf616a;">        -vf </span><span>\
+</span><span>            geq=&quot;</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">                r=&#39;if( </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">should_live</span><span style="color:#a3be8c;">), 0, 255 )&#39;:</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">                b=&#39;if( </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">should_live</span><span style="color:#a3be8c;">), 0, 255 )&#39;:</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">                g=&#39;if( </span><span>$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">should_live</span><span style="color:#a3be8c;">), 0, 255 )&#39;:</span><span style="color:#96b5b4;">\
+</span><span style="color:#a3be8c;">                a=255:
+</span><span style="color:#a3be8c;">                interpolation=nearest</span><span>&quot; \
+</span><span>        $</span><span style="color:#bf616a;">2
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;"># generate frames
+</span><span style="color:#b48ead;">for </span><span>((i=</span><span style="color:#d08770;">0</span><span>; i&lt;FRAMES; i++))
+</span><span style="color:#b48ead;">do
+</span><span>    </span><span style="color:#bf616a;">j</span><span>=$</span><span style="color:#a3be8c;">((i</span><span>+</span><span style="color:#d08770;">1</span><span style="color:#a3be8c;">))
+</span><span>    </span><span style="color:#96b5b4;">printf </span><span style="color:#bf616a;">-v</span><span> i_str &quot;</span><span style="color:#a3be8c;">%05d</span><span>&quot; $</span><span style="color:#bf616a;">i
+</span><span>    </span><span style="color:#96b5b4;">printf </span><span style="color:#bf616a;">-v</span><span> j_str &quot;</span><span style="color:#a3be8c;">%05d</span><span>&quot; $</span><span style="color:#bf616a;">j
+</span><span>    </span><span style="color:#bf616a;">step</span><span> out/frame-$</span><span style="color:#bf616a;">i_str</span><span>.png out/frame-$</span><span style="color:#bf616a;">j_str</span><span>.png
+</span><span style="color:#b48ead;">done
+</span><span>
+</span><span style="color:#65737e;"># combine to video
+</span><span style="color:#bf616a;">ffmpeg -framerate </span><span>$</span><span style="color:#bf616a;">FPS -pattern_type</span><span> glob</span><span style="color:#bf616a;"> -i </span><span>&#39;</span><span style="color:#a3be8c;">out/frame-*.png</span><span>&#39;</span><span style="color:#bf616a;"> -c</span><span>:v libx264</span><span style="color:#bf616a;"> -pix_fmt</span><span> yuv420p</span><span style="color:#bf616a;"> -vf</span><span> scale=&quot;</span><span style="color:#a3be8c;">&#39;</span><span>$</span><span style="color:#bf616a;">SCALE</span><span style="color:#a3be8c;">*iw:</span><span>$</span><span style="color:#bf616a;">SCALE</span><span style="color:#a3be8c;">*ih:flags=neighbor&#39;</span><span>&quot; out/life.mp4
+</span></code></pre>
+<h2 id="the-filter">The filter</h2>
+<p>Here's the ffmpeg command produced by the script for the <code>first frame</code> of the gosper example:</p>
+<p>ffmpeg -i out/frame-00000.png -vf geq=” r=’if( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 2, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + ifnot( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) , eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) ) , 0, 255 )’: b=’if( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 2, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + ifnot( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) , eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) ) , 0, 255 )’: g=’if( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 2, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) * eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) + ifnot( eq( r(X,Y), 0)* eq( g(X,Y), 0)* eq( b(X,Y), 0) , eq( 3, eq( r(X-1,Y-1), 0)* eq( g(X-1,Y-1), 0)* eq( b(X-1,Y-1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X-1,Y+0), 0)* eq( g(X-1,Y+0), 0)* eq( b(X-1,Y+0), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X-1,Y+1), 0)* eq( g(X-1,Y+1), 0)* eq( b(X-1,Y+1), 0)* lt(X-1, W)* gte(X-1, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+0,Y-1), 0)* eq( g(X+0,Y-1), 0)* eq( b(X+0,Y-1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+0,Y+1), 0)* eq( g(X+0,Y+1), 0)* eq( b(X+0,Y+1), 0)* lt(X+0, W)* gte(X+0, 0)* lt(Y+1, H)* gte(Y+1, 0) + eq( r(X+1,Y-1), 0)* eq( g(X+1,Y-1), 0)* eq( b(X+1,Y-1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y-1, H)* gte(Y-1, 0) + eq( r(X+1,Y+0), 0)* eq( g(X+1,Y+0), 0)* eq( b(X+1,Y+0), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+0, H)* gte(Y+0, 0) + eq( r(X+1,Y+1), 0)* eq( g(X+1,Y+1), 0)* eq( b(X+1,Y+1), 0)* lt(X+1, W)* gte(X+1, 0)* lt(Y+1, H)* gte(Y+1, 0) ) ) , 0, 255 )’: a=255: interpolation=nearest” out/frame-00001.png</p>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">More posts</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                    <span class="button previous">
+                        <a href="https://rasanen.dev/wayland-redshift/">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">Night Light as redshift oneshot replacement under Gnome in Ubuntu 22.04</span>
+                        </a>
+                    </span>
+                
+                
+                    <span class="button next">
+                        <a href="https://rasanen.dev/aw3423dwf-firmware-linux/">
+                            <span class="button__text">Updating Alienware AW3423DWF firmware on Linux using a Windows 10 VM inside VirtualBox</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">(half life scientist) everything.. seems to be in order</div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
