@@ -3,41 +3,72 @@ title = "projects"
 path = "projects"
 +++
 
-## wgpu-renderer
+# halflife-photomode
 
-In progress realtime renderer for learning, made with Rust and wgpu.
+A basic photo mode for Half-Life. 
 
-- PBR
-- Shadow mapping & PCF
-- Volumetric fog
-- Runs on WASM and native desktop
+Source: [https://github.com/laurirasanen/halflife-photomode](https://github.com/laurirasanen/halflife-photomode)
 
-Source: [https://github.com/laurirasanen/wgpu-renderer](https://github.com/laurirasanen/wgpu-renderer)  
-Demo: [https://rasanen.dev/wgpu-renderer/](https://rasanen.dev/wgpu-renderer/)  
-(Note: Demo may take a while to load -- 50MB Sponza scene embedded in WASM.)  
-(Note: shadowmaps and volumetric fog are not enabled on WebGL.)  
-- WASD - Move horizontally
-- Ctrl/Space - Move vertically
-- Mouse - Look around
-- Scrollwheel - Increase/Decrease movement speed
-
-{{ video(src="/projects/wgpu-renderer/2023-11-10.mp4", type="video/mp4", loop="true", autoplay="true", caption="wgpu-renderer - Sponza") }}
+{{ video(src="https://files.rasanen.dev/vid/photomode_compressed.mp4", type="video/mp4", caption="Half-Life photomode") }}
 
 <br/>
 
 - - -
 
-## UE5 FPS experiments
+## wgpu-renderer
 
-Experimenting with UE5 FPS mechanics in C++.
+Realtime renderer for learning, Rust, wgpu.
 
-Gun model is third-party but has no animations. All animations, handling, movement, etc. are implemented in C++ code.
+- PBR
+- Shadow mapping
+- Volumetric fog
+- Runs on WASM and native desktop
 
-Post-process material for glitch-effect that responds to player input.
+Source: [https://github.com/laurirasanen/wgpu-renderer](https://github.com/laurirasanen/wgpu-renderer)  
 
-{{ video(src="https://files.rasanen.dev/vid/ue5_glitch_fps.mp4", type="video/mp4", caption="UE5 FPS - Gun handling and post-process effects") }}
+{{ video(src="/projects/wgpu-renderer/2023-11-10.mp4", type="video/mp4", loop="true", autoplay="true", caption="wgpu-renderer - Sponza") }}
 
-{{ video(src="https://files.rasanen.dev/vid/ue5_lean_fps.mp4", type="video/mp4", caption="UE5 FPS - Gun handling and leaning around obstacles") }}
+Demo: [https://rasanen.dev/wgpu-renderer/](https://rasanen.dev/wgpu-renderer/)  
+(**Note: shadowmaps and volumetric fog are not enabled on WebGL.**)  
+(**Note: Demo may take a while to load -- 50MB Sponza scene embedded in WASM.**)  
+- WASD - Move horizontally
+- Ctrl/Space - Move vertically
+- Mouse - Look around
+- Scrollwheel - Increase/Decrease movement speed
+
+<br/>
+
+- - -
+
+## drive
+
+Procedular terrain experiment. C++, Vulkan.
+
+Source: [https://github.com/laurirasanen/drive](https://github.com/laurirasanen/drive)
+
+{{ video(src="https://files.rasanen.dev/vid/drive.mp4", type="video/mp4", caption="procedular terrain & sky") }}
+
+- - -
+
+## blobby
+
+SDF rendering experiment. C++, bgfx.
+
+Source: [https://github.com/laurirasanen/blobby](https://github.com/laurirasanen/blobby)
+
+{{ video(src="https://files.rasanen.dev/vid/blobby.mp4", type="video/mp4", caption="signed distance fields") }}
+
+<br/>
+
+- - -
+
+## cave
+
+Procedular cubemarched cave experiment. Rust, Bevy.
+
+Source: [https://github.com/laurirasanen/cave](https://github.com/laurirasanen/cave)
+
+{{ video(src="https://files.rasanen.dev/vid/cave_low.mp4", type="video/mp4", caption="procedular cave") }}
 
 <br/>
 
@@ -64,35 +95,17 @@ Team:
 
 - - -
 
-## BridgeSource2Plugin
+## hl-renderer
 
-Plugin for exporting assets from Quixel Bridge to Source 2. C#.
+A modified renderer for [Xash3D FWGS](https://github.com/FWGS/xash3d-fwgs) (Half-Life) for testing post-processing effects. C, OpenGL.
 
-- Exporting geometry & textures
-- Automatic VMAT and VMDL creation
-- Automatic compiling of exported assets with resourcecompiler.exe
-- Automatic VMDL LOD setup from all exported LODs
-- Automatic .spray -prefab creation from assets with multiple variations
-- Option to specify shaders to use in materials
-- Option to change export scale of 3d assets
+Source: [https://github.com/laurirasanen/hl-renderer](https://github.com/laurirasanen/hl-renderer)
 
-Source: [https://github.com/laurirasanen/BridgeSource2Plugin](https://github.com/laurirasanen/BridgeSource2Plugin)
+{{ figure(src="/projects/hl-renderer/cg.png", caption="Color grading") }}
 
-{{ video(src="https://files.rasanen.dev/vid/bridge2.mp4", type="video/mp4", caption="BridgeSource2Plugin - Asset Sprayer demo") }}
+{{ figure(src="/projects/hl-renderer/vignette.png", caption="Vignette") }}
 
-{{ video(src="https://files.rasanen.dev/vid/bridge.mp4", type="video/mp4", caption="BridgeSource2Plugin - Model exporter demo") }}
-
-<br/>
-
-- - -
-
-## Shovel
-
-A heightmap to displacement exporter for Source 2 Hammer editor. C#.
-
-Source: [https://github.com/laurirasanen/Shovel](https://github.com/laurirasanen/Shovel)
-
-{{ video(src="https://files.rasanen.dev/vid/shovel.mp4", type="video/mp4", caption="Shovel - World Creator heightmap to Source 2 Hammer") }}
+{{ figure(src="/projects/hl-renderer/chromatic_aberration.png", caption="Chromatic aberration") }}
 
 <br/>
 
@@ -100,7 +113,7 @@ Source: [https://github.com/laurirasanen/Shovel](https://github.com/laurirasanen
 
 ## my_game
 
-In progress retro FPS in C99.
+Retro FPS toy project. C, OpenGL.
 
 - BSP rendering, lighting, collisions
 - MD3 models
@@ -123,29 +136,19 @@ Source: [https://github.com/laurirasanen/my_game](https://github.com/laurirasane
 
 - - -
 
-## blobby
+## Defence of Mann. Co
 
-SDF rendering experiment. C++, bgfx.
+Moba gamemode for TF2, VScript.
 
-Source: [https://github.com/laurirasanen/blobby](https://github.com/laurirasanen/blobby)
+- Robots as creeps
+- Sentries as towers
+- Leveling, custom damage, health, etc. for player classes
 
-{{ video(src="https://files.rasanen.dev/vid/blobby.mp4", type="video/mp4", caption="signed distance fields") }}
+Source: [https://github.com/laurirasanen/domc](https://github.com/laurirasanen/domc)
 
-<br/>
+Steam Workshop: [https://steamcommunity.com/sharedfiles/filedetails/?id=3308664636](https://steamcommunity.com/sharedfiles/filedetails/?id=3308664636)
 
-- - -
-
-## hl-renderer
-
-A modified renderer for [Xash3D FWGS](https://github.com/FWGS/xash3d-fwgs) (Half-Life) for testing post-processing effects. C, OpenGL.
-
-Source: [https://github.com/laurirasanen/hl-renderer](https://github.com/laurirasanen/hl-renderer)
-
-{{ figure(src="/projects/hl-renderer/cg.png", caption="Color grading") }}
-
-{{ figure(src="/projects/hl-renderer/vignette.png", caption="Vignette") }}
-
-{{ figure(src="/projects/hl-renderer/chromatic_aberration.png", caption="Chromatic aberration") }}
+{{ image(src="https://files.rasanen.dev/img/domc_trainyard_b7.png") }}
 
 <br/>
 
@@ -186,6 +189,40 @@ Source: [https://github.com/laurirasanen/GA-input](https://github.com/laurirasan
 
 - - -
 
+## Shovel
+
+A heightmap to displacement exporter for Source 2 Hammer editor. C#.
+
+Source: [https://github.com/laurirasanen/Shovel](https://github.com/laurirasanen/Shovel)
+
+{{ video(src="https://files.rasanen.dev/vid/shovel.mp4", type="video/mp4", caption="Shovel - World Creator heightmap to Source 2 Hammer") }}
+
+<br/>
+
+- - -
+
+## BridgeSource2Plugin
+
+Plugin for exporting assets from Quixel Bridge to Source 2. C#.
+
+- Exporting geometry & textures
+- Automatic VMAT and VMDL creation
+- Automatic compiling of exported assets with resourcecompiler.exe
+- Automatic VMDL LOD setup from all exported LODs
+- Automatic .spray -prefab creation from assets with multiple variations
+- Option to specify shaders to use in materials
+- Option to change export scale of 3d assets
+
+Source: [https://github.com/laurirasanen/BridgeSource2Plugin](https://github.com/laurirasanen/BridgeSource2Plugin)
+
+{{ video(src="https://files.rasanen.dev/vid/bridge2.mp4", type="video/mp4", caption="BridgeSource2Plugin - Asset Sprayer demo") }}
+
+{{ video(src="https://files.rasanen.dev/vid/bridge.mp4", type="video/mp4", caption="BridgeSource2Plugin - Model exporter demo") }}
+
+<br/>
+
+- - -
+
 ## Tempus Records
 
 Automated TF2 rocket/sticky jump speedrun recording & uploading to YouTube. JavaScript, Node.js.
@@ -197,40 +234,6 @@ Source: [https://github.com/laurirasanen/TempusRecords](https://github.com/lauri
 YouTube: [https://www.youtube.com/tempusrecords](https://www.youtube.com/tempusrecords)
 
 {{ video(src="https://files.rasanen.dev/vid/tempusrecords.mp4", type="video/mp4", caption="TempusRecords - newjuls on jump_keep_final - 01:17.699") }}
-
-<br/>
-
-- - -
-
-## domc
-
-In progress moba gamemode for TF2. Vscript.
-
-- Robots as creeps
-- Sentries as towers
-- Leveling, custom damage, health, etc. for player classes
-
-Source: [https://github.com/laurirasanen/domc](https://github.com/laurirasanen/domc)
-
-{{ video(src="/projects/dotf/dotf-2022-12-06-3.mp4", type="video/mp4", caption="Lane pathfinding") }}
-
-{{ video(src="/projects/dotf/dotf-old.mp4", type="video/mp4", caption="Melee and ranged creep test") }}
-
-<br/>
-
-- - -
-
-## shaderapivulkan
-
-An incomplete [shaderapi](https://developer.valvesoftware.com/wiki/Source_SDK_2013:_Your_First_Shader#Architecture) project aimed at adding Vulkan support to the Source 1 engine. C++.
-
-- Wireframe only, no other shaders, textures, etc.
-
-Source: [https://github.com/laurirasanen/shaderapivulkan](https://github.com/laurirasanen/shaderapivulkan)
-
-{{ figure(src="/projects/shaderapivulkan/hammer.png", caption="Hammer editor running on Vulkan") }}
-
-{{ figure(src="/projects/shaderapivulkan/hammer2.png", caption="Hammer editor running on Vulkan") }}
 
 <br/>
 
@@ -285,22 +288,6 @@ Prompt:
 
 {{ image(src="/projects/hammer/box13_006.jpeg") }}
 
-### jump_byte
-
-- 2021-03
-- WIP TF2 jump map
-- Source: [https://github.com/laurirasanen/tf-maps](https://github.com/laurirasanen/tf-maps)
-
-{{ image(src="/projects/hammer/byte_001.png") }}
-
-{{ image(src="/projects/hammer/byte_002.png") }}
-
-{{ image(src="/projects/hammer/byte_003.png") }}
-
-{{ image(src="/projects/hammer/byte_004.png") }}
-
-{{ image(src="/projects/hammer/byte_005.png") }}
-
 ### house1
 
 - 2021-04
@@ -316,32 +303,6 @@ Prompt:
 {{ image(src="/projects/hammer/house1_004.jpg") }}
 
 {{ image(src="/projects/hammer/house1_005.jpg") }}
-
-<br/>
-
-- - -
-
-## Goliath
-
-A very dumb Rocket League reinforcement learning bot trained with rlgym. Python.
-
-Source: [https://github.com/laurirasanen/goliath](https://github.com/laurirasanen/goliath)
-
-{{ video(src="/projects/goliath/vid.mp4", type="video/mp4", caption="Goliath playing against itself") }}
-
-<br/>
-
-- - -
-
-## NoitaMod
-
-A barebones C# modding api for Noita.
-
-- DLL injection
-- Read/write process memory
-- Byte pattern scanning
-
-Source: [https://github.com/laurirasanen/NoitaMod](https://github.com/laurirasanen/NoitaMod)
 
 <br/>
 
